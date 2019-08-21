@@ -7,16 +7,15 @@ import app.hechizos.Hechizo;
 import app.interfaces.IHacerMagia;
 
 /**
- * Wizard
+ * Elfo
  */
-public class Wizard implements IHacerMagia {
+public class Elfo implements IHacerMagia{
 
     public List<Hechizo> hechizos = new ArrayList<Hechizo>();
 
     @Override
     public void atacar(Personaje enemigo, Hechizo hechizo) {
 
-    }
-
+		}
 
 }
