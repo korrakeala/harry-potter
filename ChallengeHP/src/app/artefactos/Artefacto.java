@@ -1,5 +1,6 @@
 package app.artefactos;
 
+import app.hechizos.Poder;
 import app.interfaces.IEsMagico;
 
 /**
