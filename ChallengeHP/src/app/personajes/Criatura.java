@@ -7,5 +7,15 @@ import app.interfaces.IEsMagico;
  */
 public class Criatura implements IEsMagico {
 
+    @Override
+    public boolean esInvisibleAMuggles() {
+        return false;
+    }
+
+    @Override
+    public boolean esInvisible() {
+        return false;
+    }
+
     
 }
