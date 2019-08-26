@@ -5,5 +5,9 @@ package app.hechizos;
  */
 public class Hechizo {
 
+    boolean esOscuro;
+    double nivelDanio;
+    double nivelCuracion;
+    double nivelEnergia;
     
 }
