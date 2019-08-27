@@ -20,7 +20,7 @@ public class ClaseChamuyo {
         b = Teclado.nextInt();
 
         System.out.println("INGRESE EL SUSTRAENDO:");
-        c = Teclado.nextDouble();
+        c = Teclado.nextInt();
 
         
         d = ((a * b) - c);
