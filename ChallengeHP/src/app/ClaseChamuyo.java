@@ -11,7 +11,8 @@ public class ClaseChamuyo {
 
         Scanner Teclado = new Scanner(System.in);
             
-        int a, b, c, d;
+        int a, b, d;
+        double c;
 
         System.out.println("INGRESE EL MULTIPLICANDO:");
         a = Teclado.nextInt();
@@ -20,7 +21,7 @@ public class ClaseChamuyo {
         b = Teclado.nextInt();
 
         System.out.println("INGRESE EL SUSTRAENDO:");
-        c = Teclado.nextInt();
+        c = Teclado.nextDouble();
 
         
         d = ((a * b) - c);
