@@ -11,21 +11,17 @@ public class ClaseChamuyo {
 
         Scanner Teclado = new Scanner(System.in);
             
-        int a, b, c, d;
+        int a, b, c;
 
         System.out.println("INGRESE EL MULTIPLICANDO:");
         a = Teclado.nextInt();
         
         System.out.println("INGRESE EL MULTIPLICADOR:");
         b = Teclado.nextInt();
-
-        System.out.println("INGRESE EL SUSTRAENDO:");
-        c = Teclado.nextInt();
-
         
-        d = ((a * b) - c);
+        c = (a * b);
 
-        System.out.println("EL RESULTADO DE LA OPERACION ES: "+ d);
+        System.out.println("EL RESULTADO DE LA OPERACION ES: "+ c);
 
     }
 }
