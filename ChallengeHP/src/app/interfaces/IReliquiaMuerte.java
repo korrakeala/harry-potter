@@ -5,5 +5,5 @@ package app.interfaces;
  */
 public interface IReliquiaMuerte {
 
-    // esReliquiaMuerte() -> devuelve boolean
+    boolean esReliquiaMuerte();
 }

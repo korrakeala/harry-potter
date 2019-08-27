@@ -1,6 +1,7 @@
 package app.interfaces;
 
 import app.hechizos.Hechizo;
+import app.hechizos.Poder;
 import app.personajes.Personaje;
 
 /**
@@ -9,9 +10,8 @@ import app.personajes.Personaje;
 public interface IHacerMagia {
 
     void atacar(Personaje enemigo, Hechizo hechizo);
-
-// getPoderInicial()
-// setPoderInicial(Poder p)
+    Poder getPoderInicial();
+    void setPoderInicial(Poder poderInicial);
 // Aprender(Hechizo h)
 // getArtefactos() -> List<Artefacto>
 // Atacar(Personaje p, Hechizo h)

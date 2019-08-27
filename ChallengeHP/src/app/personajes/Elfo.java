@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import app.hechizos.Hechizo;
+import app.hechizos.Poder;
 import app.interfaces.IHacerMagia;
 
 /**
@@ -16,6 +17,16 @@ public class Elfo implements IHacerMagia{
     @Override
     public void atacar(Personaje enemigo, Hechizo hechizo) {
 
-		}
+  }
+
+  @Override
+  public Poder getPoderInicial() {
+    return null;
+  }
+
+  @Override
+  public void setPoderInicial(Poder poderInicial) {
+
+	}
 
 }
