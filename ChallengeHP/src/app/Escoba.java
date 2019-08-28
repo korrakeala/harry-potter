@@ -7,11 +7,8 @@ import app.interfaces.IEsMagico;
  */
 public class Escoba extends Transporte implements IEsMagico{
 
-<<<<<<< HEAD
-=======
     public String nombre;
 
->>>>>>> a104b3b4312a92426dfa50e010688f7b3f6e07c5
     public Escoba(String string) {
 	}
 
