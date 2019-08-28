@@ -13,6 +13,9 @@ public class VaritaSauco extends Varita implements IReliquiaMuerte{
     }
 
     public VaritaSauco() {
+        this.poder = null;
+        this.amplificadorDanio = 0.6;
+        this.amplificadorSalud = 0;
     }
 
     

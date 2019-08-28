@@ -33,13 +33,13 @@ public class Wizard extends Personaje implements IHacerMagia {
         IHacerMagia mago;
         
         for (int i = 0; i < artefactos.size(); i++) {
-            danioAdicional += this.artefactos.get(i).amplificadorDanio;
+            danioAdicional += (d * this.artefactos.get(i).amplificadorDanio);
         }
 
         if (enemigo instanceof IHacerMagia) {
             mago = (IHacerMagia) enemigo;
             for (int i = 0; i < mago.getArtefactos().size(); i++) {
-                curacion += mago.getArtefactos().get(i).amplificadorSalud;
+                curacion += (s * mago.getArtefactos().get(i).amplificadorSalud);
             }
         }
 
@@ -51,6 +51,14 @@ public class Wizard extends Personaje implements IHacerMagia {
 
         curacionTotal = s + curacion;
 
+        enemigo.salud = (int) (curacionTotal - danioTotal);
+        
+        if (enemigo.salud > 100) {
+            enemigo.salud = 100;
+        }
+        if (enemigo.salud < 1) {
+            enemigo.estaVivo = false;
+        }
 
     }
 
@@ -66,7 +74,7 @@ public class Wizard extends Personaje implements IHacerMagia {
 
     @Override
     public void aprender(Hechizo h) {
-
+        this.hechizos.add(h);
     }
 
     @Override
