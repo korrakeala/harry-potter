@@ -9,7 +9,7 @@ public class Criatura extends Personaje implements IEsMagico {
 
     @Override
     public boolean esInvisibleAMuggles() {
-        return false;
+        return true;
     }
 
     @Override

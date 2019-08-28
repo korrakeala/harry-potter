@@ -30,20 +30,24 @@ public class Wizard extends Personaje implements IHacerMagia {
         double curacion = 0;
         double danioTotal;
         double curacionTotal;
-        IHacerMagia mago;
+        IHacerMagia e;
         
         for (int i = 0; i < artefactos.size(); i++) {
             danioAdicional += (d * this.artefactos.get(i).amplificadorDanio);
         }
 
         if (enemigo instanceof IHacerMagia) {
-            mago = (IHacerMagia) enemigo;
-            for (int i = 0; i < mago.getArtefactos().size(); i++) {
-                curacion += (s * mago.getArtefactos().get(i).amplificadorSalud);
+            e = (IHacerMagia) enemigo;
+            for (int i = 0; i < e.getArtefactos().size(); i++) {
+                curacion += (s * e.getArtefactos().get(i).amplificadorSalud);
             }
         }
 
         danioTotal = d + danioAdicional;
+
+        if (hechizo.esOscuro) {
+            this.magoOscuro = true;
+        }
 
         if (this.magoOscuro) {
             danioTotal *= 2;

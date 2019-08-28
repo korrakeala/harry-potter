@@ -13,11 +13,42 @@ import app.interfaces.IHacerMagia;
  */
 public class Elfo extends Personaje implements IHacerMagia {
 
-    public List<Hechizo> hechizos = new ArrayList<Hechizo>();
-    public List<Artefacto> artefactos = new ArrayList<Artefacto>();
+  public List<Hechizo> hechizos = new ArrayList<Hechizo>();
+  public List<Artefacto> artefactos = new ArrayList<Artefacto>();
 
   @Override
   public void atacar(Personaje enemigo, Hechizo hechizo) {
+    int s = enemigo.salud;
+    double d = hechizo.nivelDanio;
+    double danioAdicional = 0;
+    double curacion = 0;
+    double danioTotal;
+    double curacionTotal;
+    IHacerMagia e;
+
+    for (int i = 0; i < artefactos.size(); i++) {
+      danioAdicional += (d * this.artefactos.get(i).amplificadorDanio);
+    }
+
+    if (enemigo instanceof IHacerMagia) {
+      e = (IHacerMagia) enemigo;
+      for (int i = 0; i < e.getArtefactos().size(); i++) {
+        curacion += (s * e.getArtefactos().get(i).amplificadorSalud);
+      }
+    }
+
+    danioTotal = d + danioAdicional;
+
+    curacionTotal = s + curacion;
+
+    enemigo.salud = (int) (curacionTotal - danioTotal);
+
+    if (enemigo.salud > 100) {
+      enemigo.salud = 100;
+    }
+    if (enemigo.salud < 1) {
+      enemigo.estaVivo = false;
+    }
 
   }
 
@@ -29,12 +60,11 @@ public class Elfo extends Personaje implements IHacerMagia {
 
   @Override
   public void setPoderInicial(Poder poderInicial) {
-
   }
 
   @Override
   public void aprender(Hechizo h) {
-
+    this.hechizos.add(h);
   }
 
   @Override
@@ -47,5 +77,4 @@ public class Elfo extends Personaje implements IHacerMagia {
 
   }
 
-      
 }

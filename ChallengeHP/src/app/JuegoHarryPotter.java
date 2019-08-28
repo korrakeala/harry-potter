@@ -24,8 +24,7 @@ public class JuegoHarryPotter {
     }
 
     public static void agregarPersonajes() {
-        Personaje p = new Wizard();
-        Wizard harry = (Wizard) p;
+        Wizard harry = new Wizard();
         harry.nombre = "Harry Potter";
         harry.salud = 100;
         harry.estaVivo = true;
