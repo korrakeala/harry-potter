@@ -22,30 +22,29 @@ public class Wizard implements IHacerMagia {
 
     }
 
-    public void setPoderInicial(Poder poderInicial) {
-        this.poderInicial = poderInicial;
-    }
+    @Override
+    public void getPoderInicial() {
 
-    public List<Hechizo> getHechizos() {
-        return hechizos;
-    }
-
-    public void setHechizos(List<Hechizo> hechizos) {
-        this.hechizos = hechizos;
-    }
-
-    public List<Artefacto> getArtefactos() {
-        return artefactos;
-    }
-
-    public void setArtefactos(List<Artefacto> artefactos) {
-        this.artefactos = artefactos;
     }
 
     @Override
-    public Poder getPoderInicial() {
-        return this.poderInicial;
+    public void setPoderInicial(Poder poderInicial) {
+
     }
 
+    @Override
+    public void aprender(Hechizo h) {
+
+    }
+
+    @Override
+    public List<Artefacto> getArtefactos() {
+        return null;
+    }
+
+    @Override
+    public void atacar(Personaje p, String nombreHechizo) {
+
+    }
 
 }
