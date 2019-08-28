@@ -5,7 +5,7 @@ import app.interfaces.IEsMagico;
 /**
  * Criatura
  */
-public class Criatura implements IEsMagico {
+public class Criatura extends Personaje implements IEsMagico {
 
     @Override
     public boolean esInvisibleAMuggles() {

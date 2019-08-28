@@ -11,7 +11,7 @@ import app.interfaces.IHacerMagia;
 /**
  * Elfo
  */
-public class Elfo implements IHacerMagia{
+public class Elfo extends Personaje implements IHacerMagia{
 
     public List<Hechizo> hechizos = new ArrayList<Hechizo>();
 
