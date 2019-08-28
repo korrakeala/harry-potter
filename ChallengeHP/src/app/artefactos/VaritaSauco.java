@@ -11,7 +11,9 @@ public class VaritaSauco extends Varita implements IReliquiaMuerte{
     public boolean esReliquiaMuerte() {
         return false;
     }
-    
+
+    public VaritaSauco() {
+    }
 
     
 }

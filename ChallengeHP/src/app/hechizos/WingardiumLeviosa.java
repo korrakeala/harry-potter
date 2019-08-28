@@ -5,5 +5,8 @@ package app.hechizos;
  */
 public class WingardiumLeviosa extends HechizoOcio{
 
+    public WingardiumLeviosa() {
+    }
+
     
 }

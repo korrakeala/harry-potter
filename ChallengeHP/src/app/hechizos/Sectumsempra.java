@@ -5,5 +5,8 @@ package app.hechizos;
  */
 public class Sectumsempra extends HechizoAtaque{
 
+    public Sectumsempra() {
+    }
+
     
 }

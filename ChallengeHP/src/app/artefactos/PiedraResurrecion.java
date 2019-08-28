@@ -11,6 +11,9 @@ public class PiedraResurrecion extends Artefacto implements IReliquiaMuerte{
     public boolean esReliquiaMuerte() {
         return false;
     }
+
+    public PiedraResurrecion() {
+    }
     
 
     

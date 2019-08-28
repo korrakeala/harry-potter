@@ -5,5 +5,8 @@ package app.hechizos;
  */
 public class VulneraSanentur extends HechizoCuracion{
 
+    public VulneraSanentur() {
+    }
+
     
 }
