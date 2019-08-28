@@ -24,17 +24,44 @@ public class Wizard extends Personaje implements IHacerMagia {
 
     @Override
     public void atacar(Personaje enemigo, Hechizo hechizo) {
+        int s = enemigo.salud;
+        double d = hechizo.nivelDanio;
+        double danioAdicional = 0;
+        double curacion = 0;
+        double danioTotal;
+        double curacionTotal;
+        IHacerMagia mago;
+        
+        for (int i = 0; i < artefactos.size(); i++) {
+            danioAdicional += this.artefactos.get(i).amplificadorDanio;
+        }
+
+        if (enemigo instanceof IHacerMagia) {
+            mago = (IHacerMagia) enemigo;
+            for (int i = 0; i < mago.getArtefactos().size(); i++) {
+                curacion += mago.getArtefactos().get(i).amplificadorSalud;
+            }
+        }
+
+        danioTotal = d + danioAdicional;
+
+        if (this.magoOscuro) {
+            danioTotal *= 2;
+        }
+
+        curacionTotal = s + curacion;
+
 
     }
 
     @Override
-    public void getPoderInicial() {
-
+    public Poder getPoderInicial() {
+        return poderInicial;
     }
 
     @Override
     public void setPoderInicial(Poder poderInicial) {
-
+        this.poderInicial = poderInicial;
     }
 
     @Override
@@ -44,7 +71,7 @@ public class Wizard extends Personaje implements IHacerMagia {
 
     @Override
     public List<Artefacto> getArtefactos() {
-        return null;
+        return artefactos;
     }
 
     @Override

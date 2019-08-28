@@ -11,9 +11,10 @@ import app.interfaces.IHacerMagia;
 /**
  * Elfo
  */
-public class Elfo extends Personaje implements IHacerMagia{
+public class Elfo extends Personaje implements IHacerMagia {
 
     public List<Hechizo> hechizos = new ArrayList<Hechizo>();
+    public List<Artefacto> artefactos = new ArrayList<Artefacto>();
 
   @Override
   public void atacar(Personaje enemigo, Hechizo hechizo) {
@@ -21,7 +22,8 @@ public class Elfo extends Personaje implements IHacerMagia{
   }
 
   @Override
-  public void getPoderInicial() {
+  public Poder getPoderInicial() {
+    return null;
 
   }
 
@@ -37,7 +39,7 @@ public class Elfo extends Personaje implements IHacerMagia{
 
   @Override
   public List<Artefacto> getArtefactos() {
-    return null;
+    return artefactos;
   }
 
   @Override
