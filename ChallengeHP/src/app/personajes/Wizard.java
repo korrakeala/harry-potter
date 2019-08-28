@@ -21,7 +21,6 @@ public class Wizard extends Personaje implements IHacerMagia {
     public boolean magoOscuro;
     public int energiaMagica;
 
-
     @Override
     public void atacar(Personaje enemigo, Hechizo hechizo) {
         int s = enemigo.salud;
@@ -31,7 +30,7 @@ public class Wizard extends Personaje implements IHacerMagia {
         double danioTotal;
         double curacionTotal;
         IHacerMagia mago;
-        
+
         for (int i = 0; i < artefactos.size(); i++) {
             danioAdicional += (d * this.artefactos.get(i).amplificadorDanio);
         }
@@ -52,7 +51,7 @@ public class Wizard extends Personaje implements IHacerMagia {
         curacionTotal = s + curacion;
 
         enemigo.salud = (int) (curacionTotal - danioTotal);
-        
+
         if (enemigo.salud > 100) {
             enemigo.salud = 100;
         }
