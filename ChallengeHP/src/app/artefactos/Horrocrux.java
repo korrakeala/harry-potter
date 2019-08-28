@@ -8,6 +8,9 @@ import app.interfaces.IReliquiaMuerte;
 public class Horrocrux extends Artefacto implements IReliquiaMuerte {
 
     public Horrocrux() {
+        this.poder = null;
+        this.amplificadorSalud = 1;
+        this.amplificadorDanio = 0;
     }
 
     @Override

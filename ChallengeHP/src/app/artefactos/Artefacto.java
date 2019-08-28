@@ -14,11 +14,11 @@ public class Artefacto implements IEsMagico {
 
     @Override
     public boolean esInvisibleAMuggles() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean esInvisible() {
-        return false;
+        return true;
     }
 }

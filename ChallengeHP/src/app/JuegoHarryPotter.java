@@ -7,9 +7,8 @@ import app.artefactos.Artefacto;
 import app.artefactos.CapaInvisibilidad;
 import app.hechizos.Parseltongue;
 import app.hechizos.Poder;
-import app.personajes.Elfo;
-
-import app.hechizos.Invisibilidad;
+import app.hechizos.RictusSempra;
+import app.hechizos.CaveInimicum;
 import app.personajes.Personaje;
 import app.personajes.Wizard;
 
@@ -31,12 +30,17 @@ public class JuegoHarryPotter {
         harry.salud = 100;
         harry.estaVivo = true;
         harry.edad = 30;
+        harry.energiaMagica = 1000;
         Poder parsel = new Parseltongue();
         harry.setPoderInicial(parsel);
         harry.escoba = new Escoba("Saeta de Fuego");
         Artefacto capa = new CapaInvisibilidad();
         harry.artefactos.add(capa);
-    
+        CaveInimicum ci = new CaveInimicum();
+        harry.aprender(ci);
+        RictusSempra rs = new RictusSempra();
+        harry.aprender(rs);
+        
 
         JuegoHarryPotter.personajes.add(harry);
 
