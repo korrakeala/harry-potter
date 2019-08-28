@@ -5,9 +5,9 @@ package app.hechizos;
  */
 public class Hechizo extends Poder{
 
-    boolean esOscuro;
-    double nivelDanio;
-    double nivelCuracion;
-    double nivelEnergia;
+    public boolean esOscuro;
+    public double nivelDanio;
+    public double nivelCuracion;
+    public double nivelEnergia;
     
 }

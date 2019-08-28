@@ -5,7 +5,7 @@ import app.interfaces.IEsMagico;
 /**
  * Tren
  */
-public class Tren implements IEsMagico{
+public class Tren extends Transporte implements IEsMagico{
 
     @Override
     public boolean esInvisibleAMuggles() {

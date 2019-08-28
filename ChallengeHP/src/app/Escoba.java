@@ -5,9 +5,14 @@ import app.interfaces.IEsMagico;
 /**
  * Escoba
  */
-public class Escoba implements IEsMagico{
+public class Escoba extends Transporte implements IEsMagico{
 
-    @Override
+    public String nombre;
+
+    public Escoba(String string) {
+	}
+
+	@Override
     public boolean esInvisibleAMuggles() {
         return false;
     }
