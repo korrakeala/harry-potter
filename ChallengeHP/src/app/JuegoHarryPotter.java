@@ -8,6 +8,7 @@ import app.artefactos.CapaInvisibilidad;
 import app.hechizos.Parseltongue;
 import app.hechizos.Poder;
 import app.personajes.Elfo;
+
 import app.hechizos.Invisibilidad;
 import app.personajes.Personaje;
 import app.personajes.Wizard;
@@ -35,11 +36,13 @@ public class JuegoHarryPotter {
         harry.escoba = new Escoba("Saeta de Fuego");
         Artefacto capa = new CapaInvisibilidad();
         harry.artefactos.add(capa);
-
+    
 
         JuegoHarryPotter.personajes.add(harry);
 
-    
+        // agregar personajes y elfos, con sus respectivos poderes y artefactos
+        // agregar muggles
+
     }
 
 }

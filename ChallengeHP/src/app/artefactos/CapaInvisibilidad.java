@@ -6,7 +6,7 @@ import app.interfaces.IReliquiaMuerte;
 /**
  * CapaInvisibilidad
  */
-public class CapaInvisibilidad extends Artefacto implements IReliquiaMuerte{
+public class CapaInvisibilidad extends Artefacto implements IReliquiaMuerte {
 
     @Override
     public boolean esReliquiaMuerte() {
@@ -16,7 +16,8 @@ public class CapaInvisibilidad extends Artefacto implements IReliquiaMuerte{
     public CapaInvisibilidad() {
         this.poder = new Invisibilidad();
     }
-    
 
+
+  
     
 }

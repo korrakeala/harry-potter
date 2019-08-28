@@ -6,6 +6,11 @@ package app.hechizos;
 public class Sectumsempra extends HechizoAtaque{
 
     public Sectumsempra() {
+        this.esOscuro = true;
+        this.nivelCuracion = 0;
+        this.nivelDanio = 75;
+        this.nivelEnergia = 40;
+
     }
 
     

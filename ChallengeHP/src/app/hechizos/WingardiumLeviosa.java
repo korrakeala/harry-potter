@@ -6,6 +6,10 @@ package app.hechizos;
 public class WingardiumLeviosa extends HechizoOcio{
 
     public WingardiumLeviosa() {
+        this.esOscuro = false;
+        this.nivelCuracion = 0;
+        this.nivelDanio = 0;
+        this.nivelEnergia = 8;
     }
 
     
