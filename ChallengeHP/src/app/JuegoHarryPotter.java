@@ -5,7 +5,10 @@ import java.util.List;
 
 import app.artefactos.Artefacto;
 import app.artefactos.CapaInvisibilidad;
+import app.artefactos.PiedraResurrecion;
+import app.artefactos.VaritaSauco;
 import app.hechizos.Parseltongue;
+import app.hechizos.PetrificusTotalus;
 import app.hechizos.Poder;
 import app.hechizos.Protego;
 import app.hechizos.RictusSempra;
@@ -13,6 +16,7 @@ import app.hechizos.Sectumsempra;
 import app.hechizos.AvadaKedavra;
 import app.hechizos.CaveInimicum;
 import app.personajes.Elfo;
+import app.personajes.Muggle;
 import app.personajes.Personaje;
 import app.personajes.Wizard;
 
@@ -43,7 +47,7 @@ public class JuegoHarryPotter {
         harry.aprender(ci);
         RictusSempra rs = new RictusSempra();
         harry.aprender(rs);
-        
+
         JuegoHarryPotter.personajes.add(harry);
 
         Elfo dobby = new Elfo();
@@ -57,6 +61,18 @@ public class JuegoHarryPotter {
         dobby.aprender(rs);
 
         JuegoHarryPotter.personajes.add(dobby);
+
+        Elfo kreacher = new Elfo();
+        kreacher.nombre = "Kreacher";
+        kreacher.salud = 100;
+        kreacher.estaVivo = true;
+        kreacher.edad = 55;
+        pro = new Protego();
+        kreacher.aprender(pro);
+        pe = new PetrificusTotalus();
+        kreacher.aprender(pe);
+
+        JuegoHarryPotter.personajes.add(kreacher);
 
         Wizard snape = new Wizard();
         snape.nombre = "Severus Snape";
@@ -73,8 +89,32 @@ public class JuegoHarryPotter {
 
         JuegoHarryPotter.personajes.add(snape);
 
+        Wizard albus = new Wizard();
+        albus.nombre = "Albus Dumbledore";
+        albus.salud = 100;
+        albus.estaVivo = true;
+        albus.edad = 180;
+        albus.energiaMagica = 5000;
+        ci = new CaveInimicum();
+        albus.aprender(ci);
+        rs = new RictusSempra();
+        albus.aprender(rs);
+        PetrificusTotalus pe = new PetrificusTotalus();
+        albus.aprender(pe);
+        pro = new Protego();
+        albus.aprender(pro);
+        Artefacto sauco = new VaritaSauco();
+        albus.artefactos.add(sauco);
 
+        JuegoHarryPotter.personajes.add(albus);
 
+        Muggle petunia = new Muggle();
+        petunia.nombre = "Petunia Dursley";
+        petunia.salud = 100;
+        petunia.estaVivo = true;
+        petunia.edad = 65;
+
+        JuegoHarryPotter.personajes.add(petunia);
 
         // agregar personajes y elfos, con sus respectivos poderes y artefactos
         // agregar muggles

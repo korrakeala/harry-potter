@@ -8,10 +8,8 @@ public class RictusSempra extends HechizoAtaque {
     public RictusSempra() {
         this.esOscuro = false;
         this.nivelCuracion = 0;
-        this.nivelDanio = 20;
+        this.nivelDanio = 25;
         this.nivelEnergia = 10;
     }
 
-
-    
 }

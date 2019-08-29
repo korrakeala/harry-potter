@@ -30,39 +30,45 @@ public class Wizard extends Personaje implements IHacerMagia {
         double danioTotal;
         double curacionTotal;
         IHacerMagia e;
-        
-        for (int i = 0; i < artefactos.size(); i++) {
-            danioAdicional += (d * this.artefactos.get(i).amplificadorDanio);
-        }
 
-        if (enemigo instanceof IHacerMagia) {
-            e = (IHacerMagia) enemigo;
-            for (int i = 0; i < e.getArtefactos().size(); i++) {
-                curacion += (s * e.getArtefactos().get(i).amplificadorSalud);
+        if (this.energiaMagica >= hechizo.nivelEnergia) {
+            this.energiaMagica -= hechizo.nivelEnergia;
+
+            for (int i = 0; i < artefactos.size(); i++) {
+                danioAdicional += (d * this.artefactos.get(i).amplificadorDanio);
             }
+
+            if (enemigo instanceof IHacerMagia) {
+                e = (IHacerMagia) enemigo;
+                for (int i = 0; i < e.getArtefactos().size(); i++) {
+                    curacion += (s * e.getArtefactos().get(i).amplificadorSalud);
+                }
+            }
+
+            danioTotal = d + danioAdicional;
+
+            if (hechizo.esOscuro) {
+                this.magoOscuro = true;
+            }
+
+            if (this.magoOscuro) {
+                danioTotal *= 2;
+            }
+
+            curacionTotal = s + curacion;
+
+            enemigo.salud = (int) (curacionTotal - danioTotal);
+
+            if (enemigo.salud > 100) {
+                enemigo.salud = 100;
+            }
+            if (enemigo.salud < 1) {
+                enemigo.estaVivo = false;
+            }
+
+        } else {
+            System.out.println("No tiene energia magica suficiente para realizar este hechizo");
         }
-
-        danioTotal = d + danioAdicional;
-
-        if (hechizo.esOscuro) {
-            this.magoOscuro = true;
-        }
-
-        if (this.magoOscuro) {
-            danioTotal *= 2;
-        }
-
-        curacionTotal = s + curacion;
-
-        enemigo.salud = (int) (curacionTotal - danioTotal);
-
-        if (enemigo.salud > 100) {
-            enemigo.salud = 100;
-        }
-        if (enemigo.salud < 1) {
-            enemigo.estaVivo = false;
-        }
-
     }
 
     @Override
