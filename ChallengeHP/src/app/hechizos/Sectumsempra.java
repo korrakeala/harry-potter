@@ -10,6 +10,7 @@ public class Sectumsempra extends HechizoAtaque{
         this.nivelCuracion = 0;
         this.nivelDanio = 75;
         this.nivelEnergia = 40;
+        this.nombre = "Sectumsempra";
 
     }
 

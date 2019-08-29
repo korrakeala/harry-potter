@@ -9,5 +9,6 @@ public class Hechizo extends Poder{
     public double nivelDanio;
     public double nivelCuracion;
     public double nivelEnergia;
+    public String nombre;
     
 }

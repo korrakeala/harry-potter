@@ -11,6 +11,7 @@ public class PetrificusTotalus extends HechizoAtaque {
         this.nivelCuracion = 0;
         this.nivelDanio = 50;
         this.nivelEnergia = 20;
+        this.nombre = "Petrificus Totalus";
     }
 
 }

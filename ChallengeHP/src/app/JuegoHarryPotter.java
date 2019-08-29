@@ -5,7 +5,6 @@ import java.util.List;
 
 import app.artefactos.Artefacto;
 import app.artefactos.CapaInvisibilidad;
-import app.artefactos.PiedraResurrecion;
 import app.artefactos.VaritaSauco;
 import app.hechizos.Parseltongue;
 import app.hechizos.PetrificusTotalus;
@@ -69,7 +68,7 @@ public class JuegoHarryPotter {
         kreacher.edad = 55;
         pro = new Protego();
         kreacher.aprender(pro);
-        pe = new PetrificusTotalus();
+        PetrificusTotalus pe = new PetrificusTotalus();
         kreacher.aprender(pe);
 
         JuegoHarryPotter.personajes.add(kreacher);
@@ -99,7 +98,7 @@ public class JuegoHarryPotter {
         albus.aprender(ci);
         rs = new RictusSempra();
         albus.aprender(rs);
-        PetrificusTotalus pe = new PetrificusTotalus();
+        pe = new PetrificusTotalus();
         albus.aprender(pe);
         pro = new Protego();
         albus.aprender(pro);
