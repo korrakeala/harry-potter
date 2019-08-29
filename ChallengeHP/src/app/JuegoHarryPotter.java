@@ -3,22 +3,9 @@ package app;
 import java.util.ArrayList;
 import java.util.List;
 
-import app.artefactos.Artefacto;
-import app.artefactos.CapaInvisibilidad;
-import app.artefactos.PiedraResurrecion;
-import app.artefactos.VaritaSauco;
-import app.hechizos.Parseltongue;
-import app.hechizos.PetrificusTotalus;
-import app.hechizos.Poder;
-import app.hechizos.Protego;
-import app.hechizos.RictusSempra;
-import app.hechizos.Sectumsempra;
-import app.hechizos.AvadaKedavra;
-import app.hechizos.CaveInimicum;
-import app.personajes.Elfo;
-import app.personajes.Muggle;
-import app.personajes.Personaje;
-import app.personajes.Wizard;
+import app.artefactos.*;
+import app.hechizos.*;
+import app.personajes.*;
 
 /**
  * JuegoHarryPotter
@@ -27,9 +14,17 @@ public class JuegoHarryPotter {
 
     public static List<Personaje> personajes = new ArrayList<Personaje>();
 
-    public void inicializarJuego() {
-
+    public static void InicializarJuego() {
+        agregarPersonajes();
     }
+
+    Personaje p1 = buscarPersonaje("Harry Potter");
+    Personaje p2 = buscarPersonaje("Severus Snape");
+
+    Hechizo h1 = p1.buscarHechizo(p1, RictusSempra);
+
+    p1.atacar(p2, h1);
+
 
     public static void agregarPersonajes() {
         Wizard harry = new Wizard();
@@ -69,7 +64,7 @@ public class JuegoHarryPotter {
         kreacher.edad = 55;
         pro = new Protego();
         kreacher.aprender(pro);
-        pe = new PetrificusTotalus();
+        PetrificusTotalus pe = new PetrificusTotalus();
         kreacher.aprender(pe);
 
         JuegoHarryPotter.personajes.add(kreacher);
@@ -99,7 +94,7 @@ public class JuegoHarryPotter {
         albus.aprender(ci);
         rs = new RictusSempra();
         albus.aprender(rs);
-        PetrificusTotalus pe = new PetrificusTotalus();
+        pe = new PetrificusTotalus();
         albus.aprender(pe);
         pro = new Protego();
         albus.aprender(pro);
@@ -116,9 +111,16 @@ public class JuegoHarryPotter {
 
         JuegoHarryPotter.personajes.add(petunia);
 
-        // agregar personajes y elfos, con sus respectivos poderes y artefactos
-        // agregar muggles
+    }
 
+    public static Personaje buscarPersonaje(String nombre){
+        for (Personaje p : JuegoHarryPotter.personajes) {
+            if (nombre == p.nombre) {
+                return p;
+            }
+        }
+        return null;
+        System.out.println("El personaje no existe.");
     }
 
 }

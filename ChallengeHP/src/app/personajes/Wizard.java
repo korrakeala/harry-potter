@@ -86,6 +86,16 @@ public class Wizard extends Personaje implements IHacerMagia {
         this.hechizos.add(h);
     }
 
+    public Hechizo buscarHechizo(Wizard p, String nombre){
+        for (Hechizo h : p.hechizos) {
+            if (nombre == p.hechizos.) {
+                return h;
+            }
+        }
+        System.out.println("El hechizo no existe.");
+        return null;
+    }
+
     @Override
     public List<Artefacto> getArtefactos() {
         return artefactos;
