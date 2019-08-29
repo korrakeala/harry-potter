@@ -10,6 +10,7 @@ public class AvadaKedavra extends HechizoAtaque {
         this.nivelCuracion = 0;
         this.nivelDanio = 500;
         this.nivelEnergia = 50;
+        this.nombre = "Avada Kedavra";
     }
 
 

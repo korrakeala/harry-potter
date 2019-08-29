@@ -10,6 +10,7 @@ public class CaveInimicum extends HechizoDefensa{
         this.nivelCuracion = 0;
         this.nivelDanio = -35;
         this.nivelEnergia = 10;
+        this.nombre = "Cave Inimicum";
     }
 
     

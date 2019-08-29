@@ -73,7 +73,51 @@ public class Elfo extends Personaje implements IHacerMagia {
   }
 
   @Override
-  public void atacar(Personaje p, String nombreHechizo) {
+  public void atacar(Personaje enemigo, String nombreHechizo) {
+
+    Hechizo h = getHechizo(nombreHechizo);
+    int s = enemigo.salud;
+    double d = h.nivelDanio;
+    double danioAdicional = 0;
+    double curacion = 0;
+    double danioTotal;
+    double curacionTotal;
+    IHacerMagia e;
+
+    for (int i = 0; i < artefactos.size(); i++) {
+      danioAdicional += (d * this.artefactos.get(i).amplificadorDanio);
+    }
+
+    if (enemigo instanceof IHacerMagia) {
+      e = (IHacerMagia) enemigo;
+      for (int i = 0; i < e.getArtefactos().size(); i++) {
+        curacion += (s * e.getArtefactos().get(i).amplificadorSalud);
+      }
+    }
+
+    danioTotal = d + danioAdicional;
+
+    curacionTotal = s + curacion;
+
+    enemigo.salud = (int) (curacionTotal - danioTotal);
+
+    if (enemigo.salud > 100) {
+      enemigo.salud = 100;
+    }
+    if (enemigo.salud < 1) {
+      enemigo.estaVivo = false;
+    }
+
+  }
+
+  public Hechizo getHechizo(String nombre) {
+
+    for (Hechizo h : this.hechizos) {
+      if (h.nombre == nombre) {
+        return h;
+      }
+    }
+    return null;
 
   }
 

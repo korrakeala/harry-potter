@@ -11,6 +11,7 @@ public class VulneraSanentur extends HechizoCuracion{
         this.nivelCuracion = 40;
         this.nivelDanio = 0;
         this.nivelEnergia = 18;
+        this.nombre = "Vulnera Sanetur";
         
     }
 
