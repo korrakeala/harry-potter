@@ -59,14 +59,19 @@ public class Wizard extends Personaje implements IHacerMagia {
 
             enemigo.salud = (int) (curacionTotal - danioTotal);
 
+            System.out.println(this.nombre + " invoca " + hechizo.nombre);
+
             if (enemigo.salud > 100) {
                 enemigo.salud = 100;
             }
             if (enemigo.salud < 1) {
                 enemigo.estaVivo = false;
                 System.out.println(enemigo.nombre + " esta MUERTOO!");
+                enemigo.salud = 0;
             }
-            System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
+            if (enemigo.estaVivo) {
+                System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
+            }
 
         } else {
             System.out.println("No tiene energia magica suficiente para realizar este hechizo");
@@ -143,15 +148,19 @@ public class Wizard extends Personaje implements IHacerMagia {
 
             enemigo.salud = (int) (curacionTotal - danioTotal);
 
+            System.out.println(this.nombre + " invoca " + h.nombre);
+
             if (enemigo.salud > 100) {
                 enemigo.salud = 100;
             }
             if (enemigo.salud < 1) {
                 enemigo.estaVivo = false;
                 System.out.println(enemigo.nombre + " esta MUERTOO!");
+                enemigo.salud = 0;
             }
-            System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
-
+            if (enemigo.estaVivo) {
+                System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
+            }
         } else {
             System.out.println("No tiene energia magica suficiente para realizar este hechizo");
         }
