@@ -32,8 +32,6 @@ public class Wizard extends Personaje implements IHacerMagia {
         IHacerMagia e;
 
         if (this.energiaMagica >= hechizo.nivelEnergia) {
-            this.energiaMagica -= hechizo.nivelEnergia;
-
             for (int i = 0; i < artefactos.size(); i++) {
                 danioAdicional += (d * this.artefactos.get(i).amplificadorDanio);
             }
@@ -44,6 +42,8 @@ public class Wizard extends Personaje implements IHacerMagia {
                     curacion += (s * e.getArtefactos().get(i).amplificadorSalud);
                 }
             }
+
+            this.energiaMagica -= hechizo.nivelEnergia;
 
             danioTotal = d + danioAdicional;
 
@@ -64,7 +64,9 @@ public class Wizard extends Personaje implements IHacerMagia {
             }
             if (enemigo.salud < 1) {
                 enemigo.estaVivo = false;
+                System.out.println(enemigo.nombre + " esta MUERTOO!");
             }
+            System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
 
         } else {
             System.out.println("No tiene energia magica suficiente para realizar este hechizo");
@@ -82,14 +84,14 @@ public class Wizard extends Personaje implements IHacerMagia {
     }
 
     @Override
-    public void aprender(Hechizo h) {
+    public void aprender(Hechizo h) { // como hago para que reconozca las subclases?
         this.hechizos.add(h);
     }
 
-    public Hechizo buscarHechizo(Wizard p, String nombre){
-        for (Hechizo h : p.hechizos) {
-            if (nombre == p.hechizos.) {
-                return h;
+    public Hechizo buscarHechizo(String nombre) {
+        for (int i = 0; i < this.hechizos.size(); i++) {
+            if (this.hechizos.get(i).nombre.equals(nombre)) {
+                return this.hechizos.get(i);
             }
         }
         System.out.println("El hechizo no existe.");
@@ -104,8 +106,8 @@ public class Wizard extends Personaje implements IHacerMagia {
     @Override
     public void atacar(Personaje enemigo, String nombreHechizo) {
 
-        int s = enemigo.salud;
         Hechizo h = getHechizo(nombreHechizo);
+        int s = enemigo.salud;
         double d = h.nivelDanio;
         double danioAdicional = 0;
         double curacion = 0;
@@ -114,8 +116,6 @@ public class Wizard extends Personaje implements IHacerMagia {
         IHacerMagia e;
 
         if (this.energiaMagica >= h.nivelEnergia) {
-            this.energiaMagica -= h.nivelEnergia;
-
             for (int i = 0; i < artefactos.size(); i++) {
                 danioAdicional += (d * this.artefactos.get(i).amplificadorDanio);
             }
@@ -126,6 +126,8 @@ public class Wizard extends Personaje implements IHacerMagia {
                     curacion += (s * e.getArtefactos().get(i).amplificadorSalud);
                 }
             }
+
+            this.energiaMagica -= h.nivelEnergia;
 
             danioTotal = d + danioAdicional;
 
@@ -146,7 +148,9 @@ public class Wizard extends Personaje implements IHacerMagia {
             }
             if (enemigo.salud < 1) {
                 enemigo.estaVivo = false;
+                System.out.println(enemigo.nombre + " esta MUERTOO!");
             }
+            System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
 
         } else {
             System.out.println("No tiene energia magica suficiente para realizar este hechizo");
@@ -156,7 +160,7 @@ public class Wizard extends Personaje implements IHacerMagia {
     public Hechizo getHechizo(String nombre) {
 
         for (Hechizo h : this.hechizos) {
-            if (h.nombre == nombre) {
+            if (h.nombre.equals(nombre)) {
                 return h;
             }
         }

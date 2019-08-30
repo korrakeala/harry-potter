@@ -18,14 +18,6 @@ public class JuegoHarryPotter {
         agregarPersonajes();
     }
 
-    Personaje p1 = buscarPersonaje("Harry Potter");
-    Personaje p2 = buscarPersonaje("Severus Snape");
-
-    Hechizo h1 = p1.buscarHechizo(p1, RictusSempra);
-
-    p1.atacar(p2, h1);
-
-
     public static void agregarPersonajes() {
         Wizard harry = new Wizard();
         harry.nombre = "Harry Potter";
@@ -113,14 +105,15 @@ public class JuegoHarryPotter {
 
     }
 
-    public static Personaje buscarPersonaje(String nombre){
+    public static Personaje buscarPersonaje(String nombre) {
         for (Personaje p : JuegoHarryPotter.personajes) {
             if (nombre == p.nombre) {
                 return p;
             }
         }
-        return null;
         System.out.println("El personaje no existe.");
+        return null;
+
     }
 
 }

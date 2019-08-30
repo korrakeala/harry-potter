@@ -38,7 +38,6 @@ public class Elfo extends Personaje implements IHacerMagia {
     }
 
     danioTotal = d + danioAdicional;
-
     curacionTotal = s + curacion;
 
     enemigo.salud = (int) (curacionTotal - danioTotal);
@@ -48,14 +47,14 @@ public class Elfo extends Personaje implements IHacerMagia {
     }
     if (enemigo.salud < 1) {
       enemigo.estaVivo = false;
+      System.out.println(enemigo.nombre + " esta MUERTOO!");
     }
-
+    System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
   }
 
   @Override
   public Poder getPoderInicial() {
     return null;
-
   }
 
   @Override
@@ -106,7 +105,9 @@ public class Elfo extends Personaje implements IHacerMagia {
     }
     if (enemigo.salud < 1) {
       enemigo.estaVivo = false;
+      System.out.println(enemigo.nombre + " esta MUERTOO!");
     }
+    System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
 
   }
 
