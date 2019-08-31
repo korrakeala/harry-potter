@@ -12,7 +12,9 @@ import app.personajes.*;
  */
 public class JuegoHarryPotter {
 
-    public static List<Personaje> personajes = new ArrayList<Personaje>();
+    public static List<Personaje> Personajes = new ArrayList<Personaje>();
+    public static List<Hechizo> Hechizos = new ArrayList<Hechizo>();
+    public static List<Artefacto> Artefactos = new ArrayList<Artefacto>();
 
     public static void InicializarJuego() {
         agregarPersonajes();
@@ -35,7 +37,7 @@ public class JuegoHarryPotter {
         RictusSempra rs = new RictusSempra();
         harry.aprender(rs);
 
-        JuegoHarryPotter.personajes.add(harry);
+        JuegoHarryPotter.Personajes.add(harry);
 
         Elfo dobby = new Elfo();
         dobby.nombre = "Dobby";
@@ -47,7 +49,7 @@ public class JuegoHarryPotter {
         rs = new RictusSempra();
         dobby.aprender(rs);
 
-        JuegoHarryPotter.personajes.add(dobby);
+        JuegoHarryPotter.Personajes.add(dobby);
 
         Elfo kreacher = new Elfo();
         kreacher.nombre = "Kreacher";
@@ -59,7 +61,7 @@ public class JuegoHarryPotter {
         PetrificusTotalus pe = new PetrificusTotalus();
         kreacher.aprender(pe);
 
-        JuegoHarryPotter.personajes.add(kreacher);
+        JuegoHarryPotter.Personajes.add(kreacher);
 
         Wizard snape = new Wizard();
         snape.nombre = "Severus Snape";
@@ -74,7 +76,7 @@ public class JuegoHarryPotter {
         AvadaKedavra ak = new AvadaKedavra();
         snape.aprender(ak);
 
-        JuegoHarryPotter.personajes.add(snape);
+        JuegoHarryPotter.Personajes.add(snape);
 
         Wizard albus = new Wizard();
         albus.nombre = "Albus Dumbledore";
@@ -93,7 +95,7 @@ public class JuegoHarryPotter {
         Artefacto sauco = new VaritaSauco();
         albus.artefactos.add(sauco);
 
-        JuegoHarryPotter.personajes.add(albus);
+        JuegoHarryPotter.Personajes.add(albus);
 
         Muggle petunia = new Muggle();
         petunia.nombre = "Petunia Dursley";
@@ -101,12 +103,12 @@ public class JuegoHarryPotter {
         petunia.estaVivo = true;
         petunia.edad = 65;
 
-        JuegoHarryPotter.personajes.add(petunia);
+        JuegoHarryPotter.Personajes.add(petunia);
 
     }
 
     public static Personaje buscarPersonaje(String nombre) {
-        for (Personaje p : JuegoHarryPotter.personajes) {
+        for (Personaje p : JuegoHarryPotter.Personajes) {
             if (nombre.equals(p.nombre)) {
                 return p;
             }
@@ -114,6 +116,15 @@ public class JuegoHarryPotter {
         System.out.println("El personaje no existe.");
         return null;
 
+    }
+
+    public static Hechizo agregarHechizo(String nombre){
+        for (Hechizo e : JuegoHarryPotter.Hechizos){
+            if (nombre.equals(e.nombre)) {
+                return e;
+            }
+        }
+        return null;
     }
 
 }
