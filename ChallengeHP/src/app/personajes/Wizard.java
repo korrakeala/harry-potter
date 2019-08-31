@@ -12,7 +12,7 @@ import app.interfaces.IHacerMagia;
 /**
  * Wizard
  */
-public class Wizard extends Personaje implements IHacerMagia {
+public class Wizard extends Persona implements IHacerMagia {
 
     public Escoba escoba;
     public Poder poderInicial;

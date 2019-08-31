@@ -107,7 +107,7 @@ public class JuegoHarryPotter {
 
     public static Personaje buscarPersonaje(String nombre) {
         for (Personaje p : JuegoHarryPotter.personajes) {
-            if (nombre == p.nombre) {
+            if (nombre.equals(p.nombre)) {
                 return p;
             }
         }

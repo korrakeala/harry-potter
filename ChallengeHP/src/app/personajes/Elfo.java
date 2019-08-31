@@ -11,7 +11,7 @@ import app.interfaces.IHacerMagia;
 /**
  * Elfo
  */
-public class Elfo extends Personaje implements IHacerMagia {
+public class Elfo extends Criatura implements IHacerMagia {
 
   public List<Hechizo> hechizos = new ArrayList<Hechizo>();
   public List<Artefacto> artefactos = new ArrayList<Artefacto>();
@@ -42,14 +42,20 @@ public class Elfo extends Personaje implements IHacerMagia {
 
     enemigo.salud = (int) (curacionTotal - danioTotal);
 
+    System.out.println(this.nombre + " invoca " + hechizo.nombre);
+
     if (enemigo.salud > 100) {
       enemigo.salud = 100;
     }
     if (enemigo.salud < 1) {
       enemigo.estaVivo = false;
       System.out.println(enemigo.nombre + " esta MUERTOO!");
+      enemigo.salud = 0;
+
+      if (enemigo.estaVivo) {
+        System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
+      }
     }
-    System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
   }
 
   @Override
@@ -64,6 +70,16 @@ public class Elfo extends Personaje implements IHacerMagia {
   @Override
   public void aprender(Hechizo h) {
     this.hechizos.add(h);
+  }
+
+  public Hechizo buscarHechizo(String nombre) {
+    for (int i = 0; i < this.hechizos.size(); i++) {
+      if (this.hechizos.get(i).nombre.equals(nombre)) {
+        return this.hechizos.get(i);
+      }
+    }
+    System.out.println("El hechizo no existe.");
+    return null;
   }
 
   @Override
@@ -100,21 +116,26 @@ public class Elfo extends Personaje implements IHacerMagia {
 
     enemigo.salud = (int) (curacionTotal - danioTotal);
 
+    System.out.println(this.nombre + " invoca " + h.nombre);
+
     if (enemigo.salud > 100) {
       enemigo.salud = 100;
     }
     if (enemigo.salud < 1) {
       enemigo.estaVivo = false;
       System.out.println(enemigo.nombre + " esta MUERTOO!");
+      enemigo.salud = 0;
     }
-    System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
+    if (enemigo.estaVivo) {
+      System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
+    }
 
   }
 
   public Hechizo getHechizo(String nombre) {
 
     for (Hechizo h : this.hechizos) {
-      if (h.nombre == nombre) {
+      if (h.nombre.equals(nombre)) {
         return h;
       }
     }
