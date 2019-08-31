@@ -111,6 +111,25 @@ public class JuegoHarryPotter {
 
     public static void agregarHechizos() {
 
+        Hechizo ava = new AvadaKedavra();
+        JuegoHarryPotter.Hechizos.add(ava);
+        Hechizo ci = new CaveInimicum();
+        JuegoHarryPotter.Hechizos.add(ci);
+        Hechizo pe = new PetrificusTotalus();
+        JuegoHarryPotter.Hechizos.add(ci);
+        Hechizo pro = new Protego();
+        JuegoHarryPotter.Hechizos.add(pro);
+        Hechizo re = new Reparifors();
+        JuegoHarryPotter.Hechizos.add(re);
+        Hechizo rs = new RictusSempra();
+        JuegoHarryPotter.Hechizos.add(rs);
+        Hechizo se = new Sectumsempra();
+        JuegoHarryPotter.Hechizos.add(se);
+        Hechizo vs = new VulneraSanentur();
+        JuegoHarryPotter.Hechizos.add(vs);
+        Hechizo wl = new WingardiumLeviosa();
+        JuegoHarryPotter.Hechizos.add(wl);
+
     }
 
     public static void agregarArtefactos() {
@@ -125,7 +144,7 @@ public class JuegoHarryPotter {
                 if (!nombre.equals(p.nombre)) {
                     System.out.println("El personaje no existe.");
                 }
-            } 
+            }
         }
         return null;
 
