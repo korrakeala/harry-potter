@@ -31,13 +31,6 @@ public class JuegoHarryPotter {
         harry.energiaMagica = 1000;
         Poder parsel = new Parseltongue();
         harry.setPoderInicial(parsel);
-        harry.escoba = new Escoba("Saeta de Fuego");
-        Artefacto capa = new CapaInvisibilidad();
-        harry.artefactos.add(capa);
-        CaveInimicum ci = new CaveInimicum();
-        harry.aprender(ci);
-        RictusSempra rs = new RictusSempra();
-        harry.aprender(rs);
 
         JuegoHarryPotter.Personajes.add(harry);
 
@@ -46,10 +39,6 @@ public class JuegoHarryPotter {
         dobby.salud = 100;
         dobby.estaVivo = true;
         dobby.edad = 45;
-        Protego pro = new Protego();
-        dobby.aprender(pro);
-        rs = new RictusSempra();
-        dobby.aprender(rs);
 
         JuegoHarryPotter.Personajes.add(dobby);
 
@@ -58,10 +47,6 @@ public class JuegoHarryPotter {
         kreacher.salud = 100;
         kreacher.estaVivo = true;
         kreacher.edad = 55;
-        pro = new Protego();
-        kreacher.aprender(pro);
-        PetrificusTotalus pe = new PetrificusTotalus();
-        kreacher.aprender(pe);
 
         JuegoHarryPotter.Personajes.add(kreacher);
 
@@ -71,12 +56,6 @@ public class JuegoHarryPotter {
         snape.estaVivo = true;
         snape.edad = 65;
         snape.energiaMagica = 1000;
-        Sectumsempra sc = new Sectumsempra();
-        snape.aprender(sc);
-        ci = new CaveInimicum();
-        snape.aprender(ci);
-        AvadaKedavra ak = new AvadaKedavra();
-        snape.aprender(ak);
 
         JuegoHarryPotter.Personajes.add(snape);
 
@@ -86,16 +65,6 @@ public class JuegoHarryPotter {
         albus.estaVivo = true;
         albus.edad = 180;
         albus.energiaMagica = 5000;
-        ci = new CaveInimicum();
-        albus.aprender(ci);
-        rs = new RictusSempra();
-        albus.aprender(rs);
-        pe = new PetrificusTotalus();
-        albus.aprender(pe);
-        pro = new Protego();
-        albus.aprender(pro);
-        Artefacto sauco = new VaritaSauco();
-        albus.artefactos.add(sauco);
 
         JuegoHarryPotter.Personajes.add(albus);
 
@@ -133,7 +102,16 @@ public class JuegoHarryPotter {
     }
 
     public static void agregarArtefactos() {
-
+        Artefacto capa = new CapaInvisibilidad();
+        JuegoHarryPotter.Artefactos.add(capa);
+        Artefacto horro = new Horrocrux();
+        JuegoHarryPotter.Artefactos.add(horro);
+        Artefacto piedraR = new PiedraResurrecion();
+        JuegoHarryPotter.Artefactos.add(piedraR);
+        Artefacto varita = new Varita();
+        JuegoHarryPotter.Artefactos.add(varita);
+        Artefacto sauco = new VaritaSauco();
+        JuegoHarryPotter.Artefactos.add(sauco);
     }
 
     public static Personaje buscarPersonaje(String nombre) {
@@ -148,6 +126,24 @@ public class JuegoHarryPotter {
         }
         return null;
 
+    }
+
+    public static void listarPersonajes() {
+        for (int i = 0; i < JuegoHarryPotter.Personajes.size(); i++) {
+            System.out.println(JuegoHarryPotter.Personajes.get(i));
+        }
+    }
+
+    public static void listarHechizos() {
+        for (int i = 0; i < JuegoHarryPotter.Hechizos.size(); i++) {
+            System.out.println(JuegoHarryPotter.Hechizos.get(i));
+        }
+    }
+
+    public static void listarArtefactos() {
+        for (int i = 0; i < JuegoHarryPotter.Artefactos.size(); i++) {
+            System.out.println(JuegoHarryPotter.Artefactos.get(i));
+        }
     }
 
 }

@@ -12,6 +12,11 @@ public class App {
 
         JuegoHarryPotter.InicializarJuego();
 
+        System.out.println("Elegi el personaje 1");
+        for (Personaje p : JuegoHarryPotter.Personajes) {
+            System.out.println(p.nombre);              
+        }
+
         //aca pelean wizardd y wizard
         /*Personaje p = JuegoHarryPotter.buscarPersonaje("Harry Potter");
         Wizard p1 = (Wizard) p;
@@ -45,10 +50,5 @@ public class App {
         System.out.println(e1.nombre + " ataca a " + p1.nombre);
         e1.atacar(p1, "RictusSempra");*/
 
-        System.out.println("Elegi el personaje 1");
-        for (Personaje p : JuegoHarryPotter.Personajes) {
-            System.out.println(p.nombre);              
-        }
-        
     }
 }
