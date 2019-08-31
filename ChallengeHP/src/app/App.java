@@ -2,6 +2,7 @@ package app;
 
 import java.util.Scanner;
 
+import app.hechizos.Hechizo;
 import app.personajes.*;
 
 public class App {
@@ -16,14 +17,13 @@ public class App {
         JuegoHarryPotter.listarPersonajes();
         String p1 = Teclado.nextLine();
         Personaje personaje1 = JuegoHarryPotter.buscarPersonaje(p1);
+        Wizard personaje1Parse = (Wizard) personaje1;
 
         System.out.println("Elegi que hechizos aprender ingresando su Nombre.");
         JuegoHarryPotter.listarHechizos();
         String h1 = Teclado.nextLine();
-
-        for (Personaje p : JuegoHarryPotter.Personajes) {
-            System.out.println(p.nombre);              
-        }
+        Hechizo h = JuegoHarryPotter.buscarHechizo(h1);
+        personaje1Parse.hechizos.add(h);
 
         //aca pelean wizardd y wizard
         /*Personaje p = JuegoHarryPotter.buscarPersonaje("Harry Potter");

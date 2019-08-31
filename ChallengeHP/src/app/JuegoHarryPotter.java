@@ -114,19 +114,6 @@ public class JuegoHarryPotter {
         JuegoHarryPotter.Artefactos.add(sauco);
     }
 
-    public static Personaje buscarPersonaje(String nombre) {
-        for (Personaje p : JuegoHarryPotter.Personajes) {
-            if (nombre.equals(p.nombre)) {
-                return p;
-            } else {
-                if (!nombre.equals(p.nombre)) {
-                    System.out.println("El personaje no existe.");
-                }
-            }
-        }
-        return null;
-    }
-
     public static void listarPersonajes() {
         for (int i = 0; i < JuegoHarryPotter.Personajes.size(); i++) {
             System.out.println(JuegoHarryPotter.Personajes.get(i));
@@ -143,6 +130,19 @@ public class JuegoHarryPotter {
         for (int i = 0; i < JuegoHarryPotter.Artefactos.size(); i++) {
             System.out.println(JuegoHarryPotter.Artefactos.get(i));
         }
+    }
+
+    public static Personaje buscarPersonaje(String nombre) {
+        for (Personaje p : JuegoHarryPotter.Personajes) {
+            if (nombre.equals(p.nombre)) {
+                return p;
+            } else {
+                if (!nombre.equals(p.nombre)) {
+                    System.out.println("El personaje no existe.");
+                }
+            }
+        }
+        return null;
     }
 
     public static Hechizo buscarHechizo(String nombre){
