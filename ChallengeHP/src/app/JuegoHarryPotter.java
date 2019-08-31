@@ -85,7 +85,7 @@ public class JuegoHarryPotter {
         Hechizo ci = new CaveInimicum();
         JuegoHarryPotter.Hechizos.add(ci);
         Hechizo pe = new PetrificusTotalus();
-        JuegoHarryPotter.Hechizos.add(ci);
+        JuegoHarryPotter.Hechizos.add(pe);
         Hechizo pro = new Protego();
         JuegoHarryPotter.Hechizos.add(pro);
         Hechizo re = new Reparifors();
@@ -144,6 +144,23 @@ public class JuegoHarryPotter {
         for (int i = 0; i < JuegoHarryPotter.Artefactos.size(); i++) {
             System.out.println(JuegoHarryPotter.Artefactos.get(i));
         }
+    }
+
+    public static Hechizo buscarHechizo(String nombre){
+        for (Hechizo h : JuegoHarryPotter.Hechizos){
+            if (nombre.equals(h.nombre));
+            return h;
+        }
+        return null;
+    }
+    
+
+    public static Artefacto buscarArtefacto(String nombre){
+        for (Artefacto a : JuegoHarryPotter.Artefactos){
+            if (nombre.equals(a.nombre));
+            return a;
+        }
+        return null;
     }
 
 }

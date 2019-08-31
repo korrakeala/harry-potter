@@ -11,6 +11,7 @@ public class Horrocrux extends Artefacto implements IReliquiaMuerte {
         this.poder = null;
         this.amplificadorSalud = 1;
         this.amplificadorDanio = 0;
+        this.nombre = "Horrocrux";
     }
 
     @Override
