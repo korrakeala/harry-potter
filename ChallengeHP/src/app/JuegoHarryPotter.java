@@ -18,6 +18,8 @@ public class JuegoHarryPotter {
 
     public static void InicializarJuego() {
         agregarPersonajes();
+        agregarHechizos();
+        agregarArtefactos();
     }
 
     public static void agregarPersonajes() {
@@ -107,24 +109,26 @@ public class JuegoHarryPotter {
 
     }
 
+    public static void agregarHechizos() {
+
+    }
+
+    public static void agregarArtefactos() {
+
+    }
+
     public static Personaje buscarPersonaje(String nombre) {
         for (Personaje p : JuegoHarryPotter.Personajes) {
             if (nombre.equals(p.nombre)) {
                 return p;
-            }
-        }
-        System.out.println("El personaje no existe.");
-        return null;
-
-    }
-
-    public static Hechizo agregarHechizo(String nombre){
-        for (Hechizo e : JuegoHarryPotter.Hechizos){
-            if (nombre.equals(e.nombre)) {
-                return e;
-            }
+            } else {
+                if (!nombre.equals(p.nombre)) {
+                    System.out.println("El personaje no existe.");
+                }
+            } 
         }
         return null;
+
     }
 
 }
