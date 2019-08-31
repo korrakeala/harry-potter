@@ -12,7 +12,15 @@ public class App {
 
         JuegoHarryPotter.InicializarJuego();
 
-        System.out.println("Elegi el personaje 1");
+        System.out.println("Elegi el personaje 1 ingresando su Nombre.");
+        JuegoHarryPotter.listarPersonajes();
+        String p1 = Teclado.nextLine();
+        Personaje personaje1 = JuegoHarryPotter.buscarPersonaje(p1);
+
+        System.out.println("Elegi que hechizos aprender ingresando su Nombre.");
+        JuegoHarryPotter.listarHechizos();
+        String h1 = Teclado.nextLine();
+
         for (Personaje p : JuegoHarryPotter.Personajes) {
             System.out.println(p.nombre);              
         }

@@ -125,7 +125,6 @@ public class JuegoHarryPotter {
             }
         }
         return null;
-
     }
 
     public static void listarPersonajes() {
