@@ -17,6 +17,7 @@ public class CapaInvisibilidad extends Artefacto implements IReliquiaMuerte {
         this.poder = new Invisibilidad();
         this.amplificadorDanio = 0;
         this.amplificadorSalud = 0.3;
+        this.nombre = "Capa Invisibilidad";
     }
 
     @Override

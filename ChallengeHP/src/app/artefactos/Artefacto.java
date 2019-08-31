@@ -11,6 +11,7 @@ public class Artefacto implements IEsMagico {
     public Poder poder;
     public double amplificadorDanio;
     public double amplificadorSalud;
+	public String nombre;
 
     @Override
     public boolean esInvisibleAMuggles() {
@@ -45,4 +46,15 @@ public class Artefacto implements IEsMagico {
     public void setAmplificadorSalud(double amplificadorSalud) {
         this.amplificadorSalud = amplificadorSalud;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+
+   
 }
