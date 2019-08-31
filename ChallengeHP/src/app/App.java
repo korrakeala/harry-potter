@@ -1,6 +1,5 @@
 package app;
 
-import java.util.List;
 import java.util.Scanner;
 
 import app.personajes.*;
@@ -47,7 +46,7 @@ public class App {
         e1.atacar(p1, "RictusSempra");*/
 
         System.out.println("Elegi el personaje 1");
-        for (Personaje p : JuegoHarryPotter.personajes) {
+        for (Personaje p : JuegoHarryPotter.Personajes) {
             System.out.println(p.nombre);              
         }
         

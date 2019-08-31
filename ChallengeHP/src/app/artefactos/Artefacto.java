@@ -21,4 +21,28 @@ public class Artefacto implements IEsMagico {
     public boolean esInvisible() {
         return true;
     }
+
+    public Poder getPoder() {
+        return poder;
+    }
+
+    public void setPoder(Poder poder) {
+        this.poder = poder;
+    }
+
+    public double getAmplificadorDanio() {
+        return amplificadorDanio;
+    }
+
+    public void setAmplificadorDanio(double amplificadorDanio) {
+        this.amplificadorDanio = amplificadorDanio;
+    }
+
+    public double getAmplificadorSalud() {
+        return amplificadorSalud;
+    }
+
+    public void setAmplificadorSalud(double amplificadorSalud) {
+        this.amplificadorSalud = amplificadorSalud;
+    }
 }
