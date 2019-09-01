@@ -30,6 +30,7 @@ public class Elfo extends Criatura implements IHacerMagia {
     this.hechizos.add(h);
   }
 
+  @Override
   public Hechizo getHechizo(String nombre) {
 
     for (Hechizo h : this.hechizos) {
@@ -42,6 +43,7 @@ public class Elfo extends Criatura implements IHacerMagia {
   }
 
   //Este devuelve print si no existe:
+  @Override
   public Hechizo buscarHechizo(String nombre) {
     for (int i = 0; i < this.hechizos.size(); i++) {
       if (this.hechizos.get(i).nombre.equals(nombre)) {
@@ -57,6 +59,7 @@ public class Elfo extends Criatura implements IHacerMagia {
     return artefactos;
   }
   
+  @Override
   public Artefacto getArtefacto(String nombre) {
 
     for (Artefacto a : this.artefactos) {

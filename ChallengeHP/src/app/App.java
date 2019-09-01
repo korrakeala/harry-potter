@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import app.artefactos.Artefacto;
 import app.hechizos.Hechizo;
+import app.interfaces.IHacerMagia;
 import app.personajes.*;
 
 public class App {
@@ -19,21 +20,35 @@ public class App {
         Personaje p2 = new Personaje();
         p2 = configurarPersonaje2(p1);
 
-        System.out.println(p1.toString());
-        System.out.println(p2.toString());
-
+        
     }
 
-    public static void pelear(Personaje p1, Personaje p2){
+    public static void pelear(Personaje p1, Personaje p2) {
+        IHacerMagia p;
 
         while (p1.isEstaVivo() && p2.isEstaVivo()) {
-            System.out.println(p1.nombre + " ataca a " + p2.nombre);
-            //elegir con que hechizo de la lista de p1 atacar, y asignar a una variable del tipo que corresponda
-            p1.atacar(p2, p1.buscarHechizo("RictusSempra"));
-            System.out.println(p2.nombre + " ataca a " + p1.nombre);
-            //elegir con que hechizo de la lista de p1 atacar, y asignar a una variable del tipo que corresponda
-            p2.atacar(p1, "Sectumsempra");
+            if (p1 instanceof IHacerMagia) {
+                p = (IHacerMagia) p1;
+                // elegir con que hechizo de la lista de p atacar, y asignar a una variable del
+                // tipo que corresponda
+                System.out.println(p1.nombre + " ataca a " + p2.nombre + " con el hechizo (y poner la variable)");
+                p.atacar(p2, p.buscarHechizo("RictusSempra")); // aca el parametro de atacar() es objeto
+            } else {
+                System.out.println("El personaje no puede atacar porque no es magico.");
+            }
+            if (p2 instanceof IHacerMagia) {
+                p = (IHacerMagia) p2;
+                // elegir con que hechizo de la lista de p atacar, y asignar a una variable del
+                // tipo que corresponda
+                System.out.println(p2.nombre + " ataca a " + p1.nombre + " con el hechizo (y poner la variable)");
+                p.atacar(p1, "Sectumsempra"); // aca el parametro de atacar() es string
+            } else {
+                System.out.println("El personaje no puede atacar porque no es magico.");
+            }
         }
+
+        System.out.println(p1.toString());
+        System.out.println(p2.toString());
 
     }
 
@@ -43,14 +58,14 @@ public class App {
         String p1 = Teclado.nextLine();
         Personaje personaje1 = JuegoHarryPotter.buscarPersonaje(p1);
 
-        if (personaje1 instanceof Wizard) {
+        if (personaje1 instanceof Wizard) { //usar IHacerMagia para hacer uno solo
             Wizard w = (Wizard) personaje1;
             System.out.println("Elegi que hechizos aprender ingresando su Nombre. Para terminar, ingresa 0.");
             JuegoHarryPotter.listarHechizos();
             String h1 = Teclado.nextLine();
             while (!h1.equals("0")) {
                 Hechizo h = JuegoHarryPotter.buscarHechizo(h1);
-                if (w.getHechizo(h.nombre) == null) {
+                if (w.getHechizo(h.nombre) == null) { //revisar que pasa con estas busquedas
                     w.aprender(h);
                 } else {
                     System.out.println("Ese hechizo ya fue aprendido.");
@@ -65,7 +80,7 @@ public class App {
             String a1 = Teclado.nextLine();
             while (!a1.equals("0")) {
                 Artefacto a = JuegoHarryPotter.buscarArtefacto(a1);
-                if (w.getArtefacto(a.nombre) == null) {
+                if (w.getArtefacto(a.nombre) == null) { //revisar que pasa con estas busquedas
                     w.artefactos.add(a);
                 } else {
                     System.out.println("Ese artefacto ya fue equipado.");
