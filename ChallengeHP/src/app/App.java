@@ -66,7 +66,7 @@ public class App {
             String h1 = Teclado.nextLine();
             while (!h1.equals("0")) {
                 Hechizo h = JuegoHarryPotter.buscarHechizo(h1);
-                if (w.getHechizo(h.nombre).equals(null)) {
+                if (w.getHechizo(h.nombre) == null) {
                     w.aprender(h);
                 } else {
                     System.out.println("Ese hechizo ya fue aprendido.");
@@ -81,7 +81,7 @@ public class App {
             String a1 = Teclado.nextLine();
             while (!a1.equals("0")) {
                 Artefacto a = JuegoHarryPotter.buscarArtefacto(a1);
-                if (w.getArtefacto(a.nombre).equals(null)) {
+                if (w.getArtefacto(a.nombre) == null) {
                     w.artefactos.add(a);
                 } else {
                     System.out.println("Ese artefacto ya fue equipado.");
@@ -100,7 +100,7 @@ public class App {
             String h1 = Teclado.nextLine();
             while (!h1.equals("0")) {
                 Hechizo h = JuegoHarryPotter.buscarHechizo(h1);
-                if (e.getHechizo(h.nombre).equals(null)) {
+                if (e.getHechizo(h.nombre) == null) {
                     e.aprender(h);
                 } else {
                     System.out.println("Ese hechizo ya fue aprendido.");
@@ -115,7 +115,7 @@ public class App {
             String a1 = Teclado.nextLine();
             while (!a1.equals("0")) {
                 Artefacto a = JuegoHarryPotter.buscarArtefacto(a1);
-                if (e.getArtefacto(a.nombre).equals(null)) {
+                if (e.getArtefacto(a.nombre) == null) {
                     e.artefactos.add(a);
                 } else {
                     System.out.println("Ese artefacto ya fue equipado.");
@@ -143,7 +143,7 @@ public class App {
                 String h1 = Teclado.nextLine();
                 while (!h1.equals("0")) {
                     Hechizo h = JuegoHarryPotter.buscarHechizo(h1);
-                    if (w.getHechizo(h.nombre).equals(null)) {
+                    if (w.getHechizo(h.nombre) == null) {
                         w.aprender(h);
                     } else {
                         System.out.println("Ese hechizo ya fue aprendido.");
@@ -158,7 +158,7 @@ public class App {
                 String a1 = Teclado.nextLine();
                 while (!a1.equals("0")) {
                     Artefacto a = JuegoHarryPotter.buscarArtefacto(a1);
-                    if (w.getArtefacto(a.nombre).equals(null)) {
+                    if (w.getArtefacto(a.nombre) == null) {
                         w.artefactos.add(a);
                     } else {
                         System.out.println("Ese artefacto ya fue equipado.");
@@ -177,7 +177,7 @@ public class App {
                 String h1 = Teclado.nextLine();
                 while (!h1.equals("0")) {
                     Hechizo h = JuegoHarryPotter.buscarHechizo(h1);
-                    if (e.getHechizo(h.nombre).equals(null)) {
+                    if (e.getHechizo(h.nombre) == null) {
                         e.aprender(h);
                     } else {
                         System.out.println("Ese hechizo ya fue aprendido.");
@@ -192,7 +192,7 @@ public class App {
                 String a1 = Teclado.nextLine();
                 while (!a1.equals("0")) {
                     Artefacto a = JuegoHarryPotter.buscarArtefacto(a1);
-                    if (e.getArtefacto(a.nombre).equals(null)) {
+                    if (e.getArtefacto(a.nombre) == null) {
                         e.artefactos.add(a);
                     } else {
                         System.out.println("Ese artefacto ya fue equipado.");
