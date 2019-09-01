@@ -130,4 +130,86 @@ public class App {
         return personaje1;
     }
 
+    public static Personaje configurarPersonaje2(Personaje personaje1) {
+        System.out.println("Elegi el personaje 2 ingresando su Nombre.");
+        JuegoHarryPotter.listarPersonajes();
+        String p2 = Teclado.nextLine();
+        Personaje personaje2 = JuegoHarryPotter.buscarPersonaje(p2);
+        if (!personaje2.equals(personaje1)) {
+            if (personaje2 instanceof Wizard) {
+                Wizard w = (Wizard) personaje2;
+                System.out.println("Elegi que hechizos aprender ingresando su Nombre. Para terminar, ingresa 0.");
+                JuegoHarryPotter.listarHechizos();
+                String h1 = Teclado.nextLine();
+                while (!h1.equals("0")) {
+                    Hechizo h = JuegoHarryPotter.buscarHechizo(h1);
+                    if (w.getHechizo(h.nombre).equals(null)) {
+                        w.aprender(h);
+                    } else {
+                        System.out.println("Ese hechizo ya fue aprendido.");
+                    }
+                    System.out.println("Elegi que hechizos aprender ingresando su Nombre. Para terminar, ingresa 0.");
+                    JuegoHarryPotter.listarHechizos();
+                    h1 = Teclado.nextLine();
+                }
+
+                System.out.println("Elegi que artefactos equipar ingresando su Nombre. Para terminar, ingresa 0.");
+                JuegoHarryPotter.listarArtefactos();
+                String a1 = Teclado.nextLine();
+                while (!a1.equals("0")) {
+                    Artefacto a = JuegoHarryPotter.buscarArtefacto(a1);
+                    if (w.getArtefacto(a.nombre).equals(null)) {
+                        w.artefactos.add(a);
+                    } else {
+                        System.out.println("Ese artefacto ya fue equipado.");
+                    }
+                    System.out.println("Elegi que artefactos equipar ingresando su Nombre. Para terminar, ingresa 0.");
+                    JuegoHarryPotter.listarArtefactos();
+                    a1 = Teclado.nextLine();
+                }
+                personaje2 = w;
+            }
+
+            if (personaje2 instanceof Elfo) {
+                Elfo e = (Elfo) personaje2;
+                System.out.println("Elegi que hechizos aprender ingresando su Nombre. Para terminar, ingresa 0.");
+                JuegoHarryPotter.listarHechizos();
+                String h1 = Teclado.nextLine();
+                while (!h1.equals("0")) {
+                    Hechizo h = JuegoHarryPotter.buscarHechizo(h1);
+                    if (e.getHechizo(h.nombre).equals(null)) {
+                        e.aprender(h);
+                    } else {
+                        System.out.println("Ese hechizo ya fue aprendido.");
+                    }
+                    System.out.println("Elegi que hechizos aprender ingresando su Nombre. Para terminar, ingresa 0.");
+                    JuegoHarryPotter.listarHechizos();
+                    h1 = Teclado.nextLine();
+                }
+
+                System.out.println("Elegi que artefactos equipar ingresando su Nombre. Para terminar, ingresa 0.");
+                JuegoHarryPotter.listarArtefactos();
+                String a1 = Teclado.nextLine();
+                while (!a1.equals("0")) {
+                    Artefacto a = JuegoHarryPotter.buscarArtefacto(a1);
+                    if (e.getArtefacto(a.nombre).equals(null)) {
+                        e.artefactos.add(a);
+                    } else {
+                        System.out.println("Ese artefacto ya fue equipado.");
+                    }
+                    System.out.println("Elegi que artefactos equipar ingresando su Nombre. Para terminar, ingresa 0.");
+                    JuegoHarryPotter.listarArtefactos();
+                    a1 = Teclado.nextLine();
+                }
+                personaje2 = e;
+            }
+
+            return personaje2;
+        } else {
+            System.out.println(personaje1.nombre + " ya fue seleccionado. Por favor, elija otro.");
+            configurarPersonaje2(personaje1);
+        }
+        return null;
+    }
+
 }
