@@ -116,7 +116,8 @@ public class JuegoHarryPotter {
 
     public static void listarPersonajes() {
         for (int i = 0; i < JuegoHarryPotter.Personajes.size(); i++) {
-            System.out.println(JuegoHarryPotter.Personajes.get(i));
+            Personaje p = JuegoHarryPotter.Personajes.get(i);
+            System.out.println(p.toStringNombre());
         }
     }
 
@@ -136,10 +137,6 @@ public class JuegoHarryPotter {
         for (Personaje p : JuegoHarryPotter.Personajes) {
             if (nombre.equals(p.nombre)) {
                 return p;
-            } else {
-                if (!nombre.equals(p.nombre)) {
-                    System.out.println("El personaje no existe.");
-                }
             }
         }
         return null;
