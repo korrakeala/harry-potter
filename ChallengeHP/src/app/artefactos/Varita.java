@@ -9,6 +9,7 @@ public class Varita extends Artefacto {
         this.poder = null;
         this.amplificadorDanio = 0.3;
         this.amplificadorSalud = 0;
+        this.nombre = "Varita";
     }
 
     

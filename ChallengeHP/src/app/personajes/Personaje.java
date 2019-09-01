@@ -44,7 +44,7 @@ public class Personaje {
 
     @Override
     public String toString() {
-        return "Personaje " + nombre + "]";
+        return "Personaje " + nombre + ".";
     }
     
 }

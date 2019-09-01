@@ -10,6 +10,7 @@ public class Hechizo extends Poder{
     public double nivelCuracion;
     public double nivelEnergia;
     public String nombre;
+    public String tipoHechizo;
 
     public boolean isEsOscuro() {
         return esOscuro;
@@ -49,6 +50,13 @@ public class Hechizo extends Poder{
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    @Override
+    public String toString() {
+        return "Hechizo: " + nombre + ". Tipo de Hechizo: " + tipoHechizo + ". Es Oscuro: " 
+        + esOscuro + ". Nivel de Curacion: " + nivelCuracion + ". Nivel de Danio: " + nivelDanio +
+         ". Nivel de Energia Magica requerido: " + nivelEnergia + ".";
     }
     
 }

@@ -22,6 +22,58 @@ public class Wizard extends Persona implements IHacerMagia {
     public int energiaMagica;
 
     @Override
+    public Poder getPoderInicial() {
+        return poderInicial;
+    }
+
+    @Override
+    public void setPoderInicial(Poder poderInicial) {
+        this.poderInicial = poderInicial;
+    }
+
+    @Override
+    public void aprender(Hechizo h) {
+        this.hechizos.add(h);
+    }
+
+    
+    public Hechizo getHechizo(String nombre) {
+
+        for (Hechizo h : this.hechizos) {
+            if (h.nombre.equals(nombre)) {
+                return h;
+            }
+        }
+        return null;
+    }
+
+    //Este devuelve print si no existe:
+    public Hechizo buscarHechizo(String nombre) {
+        for (int i = 0; i < this.hechizos.size(); i++) {
+            if (this.hechizos.get(i).nombre.equals(nombre)) {
+                return this.hechizos.get(i);
+            }
+        }
+        System.out.println("El hechizo no existe.");
+        return null;
+    }
+
+    @Override
+    public List<Artefacto> getArtefactos() {
+        return artefactos;
+    }
+
+    public Artefacto getArtefacto(String nombre) {
+
+        for (Artefacto a : this.artefactos) {
+            if (a.nombre.equals(nombre)) {
+                return a;
+            }
+        }
+        return null;
+    }
+
+    @Override
     public void atacar(Personaje enemigo, Hechizo hechizo) {
         int s = enemigo.salud;
         double d = hechizo.nivelDanio;
@@ -76,36 +128,6 @@ public class Wizard extends Persona implements IHacerMagia {
         } else {
             System.out.println("No tiene energia magica suficiente para realizar este hechizo");
         }
-    }
-
-    @Override
-    public Poder getPoderInicial() {
-        return poderInicial;
-    }
-
-    @Override
-    public void setPoderInicial(Poder poderInicial) {
-        this.poderInicial = poderInicial;
-    }
-
-    @Override
-    public void aprender(Hechizo h) { // como hago para que reconozca las subclases?
-        this.hechizos.add(h);
-    }
-
-    public Hechizo buscarHechizo(String nombre) {
-        for (int i = 0; i < this.hechizos.size(); i++) {
-            if (this.hechizos.get(i).nombre.equals(nombre)) {
-                return this.hechizos.get(i);
-            }
-        }
-        System.out.println("El hechizo no existe.");
-        return null;
-    }
-
-    @Override
-    public List<Artefacto> getArtefactos() {
-        return artefactos;
     }
 
     @Override
@@ -164,17 +186,6 @@ public class Wizard extends Persona implements IHacerMagia {
         } else {
             System.out.println("No tiene energia magica suficiente para realizar este hechizo");
         }
-    }
-
-    public Hechizo getHechizo(String nombre) {
-
-        for (Hechizo h : this.hechizos) {
-            if (h.nombre.equals(nombre)) {
-                return h;
-            }
-        }
-        return null;
-
     }
 
 }

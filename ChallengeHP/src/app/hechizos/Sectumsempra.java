@@ -11,6 +11,7 @@ public class Sectumsempra extends HechizoAtaque{
         this.nivelDanio = 75;
         this.nivelEnergia = 40;
         this.nombre = "Sectumsempra";
+        this.tipoHechizo = "Hechizo de Ataque";
 
     }
 

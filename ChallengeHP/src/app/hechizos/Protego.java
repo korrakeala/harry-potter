@@ -11,6 +11,7 @@ public class Protego extends HechizoDefensa{
         this.nivelDanio = -50;
         this.nivelEnergia = 20;
         this.nombre = "Protego";
+        this.tipoHechizo = "Hechizo de Defensa";
     }
 
 

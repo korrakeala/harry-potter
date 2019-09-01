@@ -55,6 +55,12 @@ public class Artefacto implements IEsMagico {
         this.nombre = nombre;
     }
 
+    @Override
+    public String toString() {
+        return "Artefacto: " + nombre + ". Amplificador de Danio: " + amplificadorDanio
+                + ". Amplificador de Salud: " + amplificadorSalud + ".";
+    }
+
 
    
 }

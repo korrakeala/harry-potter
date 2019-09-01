@@ -153,7 +153,6 @@ public class JuegoHarryPotter {
         return null;
     }
     
-
     public static Artefacto buscarArtefacto(String nombre){
         for (Artefacto a : JuegoHarryPotter.Artefactos){
             if (nombre.equals(a.nombre));
