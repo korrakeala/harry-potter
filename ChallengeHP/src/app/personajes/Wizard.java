@@ -36,7 +36,7 @@ public class Wizard extends Persona implements IHacerMagia {
         this.hechizos.add(h);
     }
 
-    
+    @Override
     public Hechizo getHechizo(String nombre) {
 
         for (Hechizo h : this.hechizos) {
@@ -48,6 +48,7 @@ public class Wizard extends Persona implements IHacerMagia {
     }
 
     //Este devuelve print si no existe:
+    @Override
     public Hechizo buscarHechizo(String nombre) {
         for (int i = 0; i < this.hechizos.size(); i++) {
             if (this.hechizos.get(i).nombre.equals(nombre)) {
@@ -63,6 +64,7 @@ public class Wizard extends Persona implements IHacerMagia {
         return artefactos;
     }
 
+    @Override
     public Artefacto getArtefacto(String nombre) {
 
         for (Artefacto a : this.artefactos) {
