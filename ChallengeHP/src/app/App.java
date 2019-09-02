@@ -20,7 +20,8 @@ public class App {
         Personaje p2 = new Personaje();
         p2 = configurarPersonaje2(p1);
 
-        
+        System.out.println(p1.toString());
+        System.out.println(p2.toString());
     }
 
     public static void pelear(Personaje p1, Personaje p2) {
@@ -57,37 +58,45 @@ public class App {
         JuegoHarryPotter.listarPersonajes();
         String p1 = Teclado.nextLine();
         Personaje personaje1 = JuegoHarryPotter.buscarPersonaje(p1);
-
-        if (personaje1 instanceof Wizard) { //usar IHacerMagia para hacer uno solo
+        // Pasar estos dos ifs a metodos separados para volver a usarlos en
+        // configurarPersonaje2()
+        if (personaje1 instanceof Wizard) { // usar IHacerMagia para hacer uno solo no funciona por la asignacion del
+                                            // final.
             Wizard w = (Wizard) personaje1;
             System.out.println("Elegi que hechizos aprender ingresando su Nombre. Para terminar, ingresa 0.");
             JuegoHarryPotter.listarHechizos();
-            String h1 = Teclado.nextLine();
-            while (!h1.equals("0")) {
-                Hechizo h = JuegoHarryPotter.buscarHechizo(h1);
-                if (w.getHechizo(h.nombre) == null) { //revisar que pasa con estas busquedas
+            String hechizo = Teclado.nextLine();
+            Hechizo h = new Hechizo(); // esto va?
+            while (!hechizo.equals("0")) {
+                h = JuegoHarryPotter.buscarHechizo(hechizo);
+                if (w.getHechizo(h.nombre) == null) { // por que vuelve a la primera posicion de la lista estatica?
                     w.aprender(h);
+                    System.out.println("El hechizo " + h.nombre + " fue aprendido.");
                 } else {
                     System.out.println("Ese hechizo ya fue aprendido.");
                 }
                 System.out.println("Elegi que hechizos aprender ingresando su Nombre. Para terminar, ingresa 0.");
                 JuegoHarryPotter.listarHechizos();
-                h1 = Teclado.nextLine();
+                hechizo = Teclado.nextLine();
+                h = new Hechizo(); // esto va?
             }
 
             System.out.println("Elegi que artefactos equipar ingresando su Nombre. Para terminar, ingresa 0.");
             JuegoHarryPotter.listarArtefactos();
             String a1 = Teclado.nextLine();
+            Artefacto a = new Artefacto();
             while (!a1.equals("0")) {
-                Artefacto a = JuegoHarryPotter.buscarArtefacto(a1);
-                if (w.getArtefacto(a.nombre) == null) { //revisar que pasa con estas busquedas
-                    w.artefactos.add(a);
+                a = JuegoHarryPotter.buscarArtefacto(a1);
+                if (w.getArtefacto(a.nombre) == null) { // revisar que pasa con estas busquedas
+                    w.equipar(a);
+                    System.out.println("El artefacto " + a.nombre + " fue equipado.");
                 } else {
                     System.out.println("Ese artefacto ya fue equipado.");
                 }
                 System.out.println("Elegi que artefactos equipar ingresando su Nombre. Para terminar, ingresa 0.");
                 JuegoHarryPotter.listarArtefactos();
                 a1 = Teclado.nextLine();
+                a = new Artefacto();
             }
             personaje1 = w;
         }
@@ -97,31 +106,37 @@ public class App {
             System.out.println("Elegi que hechizos aprender ingresando su Nombre. Para terminar, ingresa 0.");
             JuegoHarryPotter.listarHechizos();
             String h1 = Teclado.nextLine();
+            Hechizo h = new Hechizo();
             while (!h1.equals("0")) {
-                Hechizo h = JuegoHarryPotter.buscarHechizo(h1);
+                h = JuegoHarryPotter.buscarHechizo(h1);
                 if (e.getHechizo(h.nombre) == null) {
                     e.aprender(h);
+                    System.out.println("El hechizo " + h.nombre + " fue aprendido.");
                 } else {
                     System.out.println("Ese hechizo ya fue aprendido.");
                 }
                 System.out.println("Elegi que hechizos aprender ingresando su Nombre. Para terminar, ingresa 0.");
                 JuegoHarryPotter.listarHechizos();
                 h1 = Teclado.nextLine();
+                h = new Hechizo();
             }
 
             System.out.println("Elegi que artefactos equipar ingresando su Nombre. Para terminar, ingresa 0.");
             JuegoHarryPotter.listarArtefactos();
             String a1 = Teclado.nextLine();
+            Artefacto a = new Artefacto();
             while (!a1.equals("0")) {
-                Artefacto a = JuegoHarryPotter.buscarArtefacto(a1);
+                a = JuegoHarryPotter.buscarArtefacto(a1);
                 if (e.getArtefacto(a.nombre) == null) {
-                    e.artefactos.add(a);
+                    e.equipar(a);
+                    System.out.println("El artefacto " + a.nombre + " fue equipado.");
                 } else {
                     System.out.println("Ese artefacto ya fue equipado.");
                 }
                 System.out.println("Elegi que artefactos equipar ingresando su Nombre. Para terminar, ingresa 0.");
                 JuegoHarryPotter.listarArtefactos();
                 a1 = Teclado.nextLine();
+                a = new Artefacto();
             }
             personaje1 = e;
         }
@@ -138,37 +153,44 @@ public class App {
         JuegoHarryPotter.listarPersonajes();
         String p2 = Teclado.nextLine();
         Personaje personaje2 = JuegoHarryPotter.buscarPersonaje(p2);
+
         if (!personaje2.equals(personaje1)) {
             if (personaje2 instanceof Wizard) {
                 Wizard w = (Wizard) personaje2;
                 System.out.println("Elegi que hechizos aprender ingresando su Nombre. Para terminar, ingresa 0.");
                 JuegoHarryPotter.listarHechizos();
                 String h1 = Teclado.nextLine();
+                Hechizo h = new Hechizo();
                 while (!h1.equals("0")) {
-                    Hechizo h = JuegoHarryPotter.buscarHechizo(h1);
+                    h = JuegoHarryPotter.buscarHechizo(h1);
                     if (w.getHechizo(h.nombre) == null) {
                         w.aprender(h);
+                        System.out.println("El hechizo " + h.nombre + " fue aprendido.");
                     } else {
                         System.out.println("Ese hechizo ya fue aprendido.");
                     }
                     System.out.println("Elegi que hechizos aprender ingresando su Nombre. Para terminar, ingresa 0.");
                     JuegoHarryPotter.listarHechizos();
                     h1 = Teclado.nextLine();
+                    h = new Hechizo();
                 }
 
                 System.out.println("Elegi que artefactos equipar ingresando su Nombre. Para terminar, ingresa 0.");
                 JuegoHarryPotter.listarArtefactos();
                 String a1 = Teclado.nextLine();
+                Artefacto a = new Artefacto();
                 while (!a1.equals("0")) {
-                    Artefacto a = JuegoHarryPotter.buscarArtefacto(a1);
+                    a = JuegoHarryPotter.buscarArtefacto(a1);
                     if (w.getArtefacto(a.nombre) == null) {
-                        w.artefactos.add(a);
+                        w.equipar(a);
+                        System.out.println("El artefacto " + a.nombre + " fue equipado.");
                     } else {
                         System.out.println("Ese artefacto ya fue equipado.");
                     }
                     System.out.println("Elegi que artefactos equipar ingresando su Nombre. Para terminar, ingresa 0.");
                     JuegoHarryPotter.listarArtefactos();
                     a1 = Teclado.nextLine();
+                    a = new Artefacto();
                 }
                 personaje2 = w;
             }
@@ -178,34 +200,41 @@ public class App {
                 System.out.println("Elegi que hechizos aprender ingresando su Nombre. Para terminar, ingresa 0.");
                 JuegoHarryPotter.listarHechizos();
                 String h1 = Teclado.nextLine();
+                Hechizo h = new Hechizo();
                 while (!h1.equals("0")) {
-                    Hechizo h = JuegoHarryPotter.buscarHechizo(h1);
+                    h = JuegoHarryPotter.buscarHechizo(h1);
                     if (e.getHechizo(h.nombre) == null) {
                         e.aprender(h);
+                        System.out.println("El hechizo " + h.nombre + " fue aprendido.");
                     } else {
                         System.out.println("Ese hechizo ya fue aprendido.");
                     }
                     System.out.println("Elegi que hechizos aprender ingresando su Nombre. Para terminar, ingresa 0.");
                     JuegoHarryPotter.listarHechizos();
                     h1 = Teclado.nextLine();
+                    h = new Hechizo();
                 }
 
                 System.out.println("Elegi que artefactos equipar ingresando su Nombre. Para terminar, ingresa 0.");
                 JuegoHarryPotter.listarArtefactos();
                 String a1 = Teclado.nextLine();
+                Artefacto a = new Artefacto();
                 while (!a1.equals("0")) {
-                    Artefacto a = JuegoHarryPotter.buscarArtefacto(a1);
+                    a = JuegoHarryPotter.buscarArtefacto(a1);
                     if (e.getArtefacto(a.nombre) == null) {
-                        e.artefactos.add(a);
+                        e.equipar(a);
+                        System.out.println("El artefacto " + a.nombre + " fue equipado.");
                     } else {
                         System.out.println("Ese artefacto ya fue equipado.");
                     }
                     System.out.println("Elegi que artefactos equipar ingresando su Nombre. Para terminar, ingresa 0.");
                     JuegoHarryPotter.listarArtefactos();
                     a1 = Teclado.nextLine();
+                    a = new Artefacto();
                 }
                 personaje2 = e;
             }
+
             if (personaje2 == null) {
                 System.out.println("El personaje no existe. Por favor, intente de nuevo.");
                 configurarPersonaje2(personaje1);

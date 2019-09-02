@@ -55,6 +55,11 @@ public class Elfo extends Criatura implements IHacerMagia {
   }
 
   @Override
+  public void equipar(Artefacto a) {
+    this.artefactos.add(a);
+  }
+  
+  @Override
   public List<Artefacto> getArtefactos() {
     return artefactos;
   }
@@ -156,6 +161,8 @@ public class Elfo extends Criatura implements IHacerMagia {
     }
 
   }
+
+
 
   
 
