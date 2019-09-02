@@ -17,7 +17,7 @@ public class App {
 
         /* System.out.println("Elegi que hechizos aprender ingresando su Nombre. Para terminar, ingresa 0.");
         * JuegoHarryPotter.listarHechizos();
-        * Hechizo h = new Hechizo(); // esto va?
+        * Hechizo h = new Hechizo();
         * h = JuegoHarryPotter.buscarHechizo(Teclado.nextLine());
         * Hecho asi me sigue devolviendo Avada Kedavra*/
 
