@@ -21,4 +21,5 @@ public interface IHacerMagia {
     Hechizo getHechizo(String nombre);
     Hechizo buscarHechizo(String nombre);
     Artefacto getArtefacto(String nombre);
+    void equipar(Artefacto a);
 }

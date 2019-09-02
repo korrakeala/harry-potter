@@ -33,6 +33,7 @@ public class Wizard extends Persona implements IHacerMagia {
 
     @Override
     public void aprender(Hechizo h) {
+        //h = new Hechizo();
         this.hechizos.add(h);
     }
 
@@ -47,7 +48,7 @@ public class Wizard extends Persona implements IHacerMagia {
         return null;
     }
 
-    //Este devuelve print si no existe:
+    // Este devuelve print si no existe:
     @Override
     public Hechizo buscarHechizo(String nombre) {
         for (int i = 0; i < this.hechizos.size(); i++) {
@@ -57,6 +58,12 @@ public class Wizard extends Persona implements IHacerMagia {
         }
         System.out.println("El hechizo no existe.");
         return null;
+    }
+
+    @Override
+    public void equipar(Artefacto a) {
+        //a = new Artefacto();
+        this.artefactos.add(a);
     }
 
     @Override
@@ -192,7 +199,8 @@ public class Wizard extends Persona implements IHacerMagia {
 
     @Override
     public String toString() {
-        return "El personaje " + this.nombre + " esta vivo? " + this.estaVivo + " tiene " + this.salud + " puntos de salud, tiene equipados los artefactos " + artefactos + ", le quedan " + energiaMagica + " puntos de Energia Magica, sabe los hechizos " + hechizos
-                + ", es mago orcuro? " + magoOscuro + ".";
+        return "El personaje " + this.nombre + " esta vivo? " + this.estaVivo + " tiene " + this.salud
+                + " puntos de salud, tiene equipados los artefactos " + artefactos + ", le quedan " + energiaMagica
+                + " puntos de Energia Magica, sabe los hechizos " + hechizos + ", es mago orcuro? " + magoOscuro + ".";
     }
 }
