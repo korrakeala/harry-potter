@@ -32,7 +32,7 @@ public class App {
             } else {
                 if (p1 instanceof IHacerMagia) {
                     p = (IHacerMagia) p1;
-                    System.out.println("Elegi con que hechizo ataca " + p1.nombre + " ingresando su nombre");
+                    System.out.println("\nElegi con que hechizo ataca " + p1.nombre + " ingresando su nombre");
                     p.listarHechizos();
                     String h1 = Teclado.nextLine();
                     System.out.println(
