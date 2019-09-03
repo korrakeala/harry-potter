@@ -109,10 +109,9 @@ public class Elfo extends Criatura implements IHacerMagia {
         enemigo.estaVivo = false;
         System.out.println(enemigo.nombre + " esta MUERTOO!");
         enemigo.salud = 0;
-
-        if (enemigo.estaVivo) {
-          System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
-        }
+      }
+      if (enemigo.estaVivo) {
+        System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
       }
     } else {
       System.out.println(this.nombre + " no puede atacar porque esta muerto.");
