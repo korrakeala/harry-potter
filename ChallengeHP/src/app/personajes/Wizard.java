@@ -33,7 +33,6 @@ public class Wizard extends Persona implements IHacerMagia {
 
     @Override
     public void aprender(Hechizo h) {
-        //h = new Hechizo();
         this.hechizos.add(h);
     }
 
@@ -62,7 +61,7 @@ public class Wizard extends Persona implements IHacerMagia {
 
     @Override
     public void equipar(Artefacto a) {
-        //a = new Artefacto();
+
         this.artefactos.add(a);
     }
 
@@ -135,7 +134,7 @@ public class Wizard extends Persona implements IHacerMagia {
             }
 
         } else {
-            System.out.println("No tiene energia magica suficiente para realizar este hechizo");
+            System.out.println(this.nombre + " no tiene energia magica suficiente para realizar este hechizo");
         }
     }
 
@@ -193,7 +192,7 @@ public class Wizard extends Persona implements IHacerMagia {
                 System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
             }
         } else {
-            System.out.println("No tiene energia magica suficiente para realizar este hechizo");
+            System.out.println(this. nombre + " no tiene energia magica suficiente para realizar este hechizo");
         }
     }
 
