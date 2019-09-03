@@ -54,9 +54,9 @@ public class Hechizo extends Poder{
 
     @Override
     public String toString() {
-        return "Hechizo: " + nombre + ". Tipo de Hechizo: " + tipoHechizo + ". Es Oscuro: " 
-        + esOscuro + ". Nivel de Curacion: " + nivelCuracion + ". Nivel de Danio: " + nivelDanio +
-         ". Nivel de Energia Magica requerido: " + nivelEnergia + ".";
+        return "Hechizo: \"" + nombre + "\" \n \t Tipo de Hechizo: " + tipoHechizo + ". Es Oscuro: " 
+        + esOscuro + ". \n \t Nivel de Curacion: " + nivelCuracion + ". \n \t Nivel de Danio: " + nivelDanio +
+         ". \n \t Nivel de Energia Magica requerido: " + nivelEnergia + ".\n";
     }
     
 }

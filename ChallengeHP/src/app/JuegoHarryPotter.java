@@ -69,7 +69,7 @@ public class JuegoHarryPotter {
         JuegoHarryPotter.Personajes.add(albus);
 
         Muggle petunia = new Muggle();
-        petunia.nombre = "Petunia Dursley";
+        petunia.nombre = "Petunia Dursley \n";
         petunia.salud = 100;
         petunia.estaVivo = true;
         petunia.edad = 65;
