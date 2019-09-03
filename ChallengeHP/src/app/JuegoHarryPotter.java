@@ -133,27 +133,43 @@ public class JuegoHarryPotter {
         }
     }
 
-    public static Personaje buscarPersonaje(String nombre) {
+    public static Personaje buscarPersonaje(String n) {
         for (Personaje p : JuegoHarryPotter.Personajes) {
-            if (nombre.equals(p.nombre)) {
+            if (n.equals(p.nombre)) {
                 return p;
             }
         }
         return null;
     }
 
-    public static Hechizo buscarHechizo(String nombre){
-        for (Hechizo h : JuegoHarryPotter.Hechizos){
-            if (nombre.equals(h.nombre));
-            return h;
+    public static Hechizo buscarHechizo(String n){ // Con Foreach igual a buscarPersonaje() no
+        // funcionaba... misterio
+        /*for (int i = 0; i < JuegoHarryPotter.Hechizos.size(); i++) {
+            if (JuegoHarryPotter.Hechizos.get(i).nombre.equals(n)) {
+                return JuegoHarryPotter.Hechizos.get(i);
+            }
+        }
+        return null;*/
+        for (Hechizo h : JuegoHarryPotter.Hechizos) {
+            if (n.equals(h.nombre)) {
+                return h;
+            }
         }
         return null;
     }
     
-    public static Artefacto buscarArtefacto(String nombre){
-        for (Artefacto a : JuegoHarryPotter.Artefactos){
-            if (nombre.equals(a.nombre));
-            return a;
+    public static Artefacto buscarArtefacto(String n){ // Con Foreach igual a buscarPersonaje() no
+        // funcionaba... misterio
+        /*for (int i = 0; i < JuegoHarryPotter.Artefactos.size(); i++) {
+            if (JuegoHarryPotter.Artefactos.get(i).nombre.equals(n)) {
+                return JuegoHarryPotter.Artefactos.get(i);
+            }
+        }
+        return null;*/
+        for (Artefacto a : JuegoHarryPotter.Artefactos) {
+            if (n.equals(a.nombre)) {
+                return a;
+            }
         }
         return null;
     }
