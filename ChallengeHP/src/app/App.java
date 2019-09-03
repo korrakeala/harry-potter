@@ -77,7 +77,7 @@ public class App {
         siHaceMagia(personaje1);
 
         if (personaje1 == null) {
-            System.out.println("El personaje no existe. Por favor, intente de nuevo.");
+            System.out.println("\nEl personaje no existe. Por favor, intente de nuevo.\n");
             configurarPersonaje1();
         }
         return personaje1;
