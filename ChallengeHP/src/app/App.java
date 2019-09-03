@@ -71,7 +71,7 @@ public class App {
     }
 
     public static Personaje configurarPersonaje2(Personaje personaje1) {
-        System.out.println("Elegi el personaje 2 ingresando su Nombre.");
+        System.out.println("\nElegi el personaje 2 ingresando su Nombre.");
         JuegoHarryPotter.listarPersonajes();
         String p2 = Teclado.nextLine();
         Personaje personaje2 = JuegoHarryPotter.buscarPersonaje(p2);
@@ -81,12 +81,12 @@ public class App {
                 siHaceMagia(personaje2);
 
                 if (personaje2 == null) {
-                    System.out.println("El personaje no existe. Por favor, intente de nuevo.");
+                    System.out.println("\nEl personaje no existe. Por favor, intente de nuevo.\n");
                     configurarPersonaje2(personaje1);
                 }
                 return personaje2;
             } else {
-                System.out.println(personaje1.nombre + " ya fue seleccionado. Por favor, elija otro.");
+                System.out.println("\n" + personaje1.nombre + " ya fue seleccionado. Por favor, elija otro.\n");
                 configurarPersonaje2(personaje1);
             }
         } else {
@@ -130,14 +130,14 @@ public class App {
                 if (JuegoHarryPotter.buscarArtefacto(a1) != null) {
                     if (m.getArtefacto(a.nombre) == null) {
                         m.equipar(a);
-                        System.out.println("El artefacto " + a.nombre + " fue equipado.");
+                        System.out.println("\n\t\"El artefacto " + a.nombre + " fue equipado!\n");
                     } else {
-                        System.out.println("Ese artefacto ya fue equipado.");
+                        System.out.println("\nEse artefacto ya fue equipado.\n");
                     }
                 } else {
-                    System.out.println("Ese Artefacto no existe, elija otro.");
+                    System.out.println("\nEse Artefacto no existe, elija otro.\n");
                 }
-                System.out.println("Elegi que artefactos equipar ingresando su Nombre. Para terminar, ingresa 0.");
+                System.out.println("\nElegi que artefactos equipar ingresando su Nombre. Para terminar, ingresa 0.\n");
                 JuegoHarryPotter.listarArtefactos();
                 a1 = Teclado.nextLine();
                 a = new Artefacto();

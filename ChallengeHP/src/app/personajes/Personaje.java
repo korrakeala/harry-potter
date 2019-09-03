@@ -44,7 +44,7 @@ public class Personaje {
 
     @Override
     public String toString() {
-        return "El personaje " + nombre + " esta vivo? " + estaVivo + " y tiene " + salud + " puntos de salud.";
+        return "\n\tEl personaje " + nombre + " esta vivo? " + estaVivo + " y tiene " + salud + " puntos de salud.";
     }
 
     public String toStringNombre() {

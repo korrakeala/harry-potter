@@ -57,8 +57,8 @@ public class Artefacto implements IEsMagico {
 
     @Override
     public String toString() {
-        return "Artefacto: " + nombre + ". Amplificador de Danio: " + amplificadorDanio
-                + ". Amplificador de Salud: " + amplificadorSalud + ".";
+        return "Artefacto: \"" + nombre + "\"\n\t Amplificador de Danio: " + amplificadorDanio
+                + ".\n\t Amplificador de Salud: " + amplificadorSalud + ".\n";
     }
 
 
