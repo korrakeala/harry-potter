@@ -32,7 +32,11 @@ public class App {
             } else {
                 if (p1 instanceof IHacerMagia) {
                     p = (IHacerMagia) p1;
+<<<<<<< HEAD
                     System.out.println("Elegi con que hechizo ataca " + p1.nombre + " ingresando su nombre.");
+=======
+                    System.out.println("\nElegi con que hechizo ataca " + p1.nombre + " ingresando su nombre");
+>>>>>>> 6be9099ea18463a8d02759cffd9f4a771ed873d6
                     p.listarHechizos();
                     String h1 = Teclado.nextLine();
                     while (!h1.equals("0")) {
@@ -58,7 +62,7 @@ public class App {
                 if (p2 instanceof IHacerMagia) {
                     if (p2.estaVivo) {
                         p = (IHacerMagia) p2;
-                        System.out.println("Elegi con que hechizo ataca " + p2.nombre + " ingresando su nombre.");
+                        System.out.println("\nElegi con que hechizo ataca " + p2.nombre + " ingresando su nombre.");
                         p.listarHechizos();
                         String h2 = Teclado.nextLine();
                         while (!h2.equals("0")) {
