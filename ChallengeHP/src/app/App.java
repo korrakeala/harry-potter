@@ -35,7 +35,8 @@ public class App {
                     System.out.println("Elegi con que hechizo ataca " + p1.nombre + " ingresando su nombre");
                     p.listarHechizos();
                     String h1 = Teclado.nextLine();
-                    System.out.println(p1.nombre + " ataca a " + p2.nombre + " con el hechizo " + p.getHechizo(h1).nombre);
+                    System.out.println(
+                            p1.nombre + " ataca a " + p2.nombre + " con el hechizo " + p.getHechizo(h1).nombre);
                     p.atacar(p2, p.buscarHechizo(h1)); // aca el parametro de atacar() es objeto.
                 } else {
                     System.out.println("El personaje " + p1.nombre + " no puede atacar porque no hace magia.");
@@ -143,7 +144,7 @@ public class App {
                 if (JuegoHarryPotter.buscarArtefacto(a1) != null) {
                     if (m.getArtefacto(a.nombre) == null) {
                         m.equipar(a);
-                        System.out.println("\n\t\"El artefacto " + a.nombre + " fue equipado!\n");
+                        System.out.println("\n\t\"El artefacto " + a.nombre + " fue equipado!\"\n");
                     } else {
                         System.out.println("\nEse artefacto ya fue equipado.\n");
                     }
