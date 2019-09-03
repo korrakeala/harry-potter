@@ -31,10 +31,10 @@ public class Elfo extends Criatura implements IHacerMagia {
   }
 
   @Override
-  public Hechizo getHechizo(String nombre) {
+  public Hechizo getHechizo(String n) {
 
     for (Hechizo h : this.hechizos) {
-      if (h.nombre.equals(nombre)) {
+      if (h.nombre.equals(n)) {
         return h;
       }
     }
@@ -42,11 +42,11 @@ public class Elfo extends Criatura implements IHacerMagia {
 
   }
 
-  //Este devuelve print si no existe:
+  // Este devuelve print si no existe:
   @Override
-  public Hechizo buscarHechizo(String nombre) {
+  public Hechizo buscarHechizo(String n) {
     for (int i = 0; i < this.hechizos.size(); i++) {
-      if (this.hechizos.get(i).nombre.equals(nombre)) {
+      if (this.hechizos.get(i).nombre.equals(n)) {
         return this.hechizos.get(i);
       }
     }
@@ -58,23 +58,23 @@ public class Elfo extends Criatura implements IHacerMagia {
   public void equipar(Artefacto a) {
     this.artefactos.add(a);
   }
-  
+
   @Override
   public List<Artefacto> getArtefactos() {
     return artefactos;
   }
-  
+
   @Override
-  public Artefacto getArtefacto(String nombre) {
+  public Artefacto getArtefacto(String n) {
 
     for (Artefacto a : this.artefactos) {
-        if (a.nombre.equals(nombre)) {
-            return a;
-        }
+      if (a.nombre.equals(n)) {
+        return a;
+      }
     }
     return null;
-}
-  
+  }
+
   @Override
   public void atacar(Personaje enemigo, Hechizo hechizo) {
     int s = enemigo.salud;
@@ -162,8 +162,10 @@ public class Elfo extends Criatura implements IHacerMagia {
 
   }
 
-
-
-  
-
+  @Override
+  public String toStringFull(){
+    return "El personaje " + this.nombre + " esta vivo? " + this.estaVivo + ".\nTiene " + this.salud
+              + " puntos de salud.\nTiene equipados los artefactos " + artefactos + ".\nSabe los hechizos "
+               + hechizos + ".";
+  }
 }

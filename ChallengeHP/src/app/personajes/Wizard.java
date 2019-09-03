@@ -38,10 +38,10 @@ public class Wizard extends Persona implements IHacerMagia {
     }
 
     @Override
-    public Hechizo getHechizo(String nombre) {
+    public Hechizo getHechizo(String n) {
 
         for (Hechizo h : this.hechizos) {
-            if (h.nombre.equals(nombre)) {
+            if (h.nombre.equals(n)) {
                 return h;
             }
         }
@@ -50,9 +50,9 @@ public class Wizard extends Persona implements IHacerMagia {
 
     // Este devuelve print si no existe:
     @Override
-    public Hechizo buscarHechizo(String nombre) {
+    public Hechizo buscarHechizo(String n) {
         for (int i = 0; i < this.hechizos.size(); i++) {
-            if (this.hechizos.get(i).nombre.equals(nombre)) {
+            if (this.hechizos.get(i).nombre.equals(n)) {
                 return this.hechizos.get(i);
             }
         }
@@ -72,10 +72,10 @@ public class Wizard extends Persona implements IHacerMagia {
     }
 
     @Override
-    public Artefacto getArtefacto(String nombre) {
+    public Artefacto getArtefacto(String n) {
 
         for (Artefacto a : this.artefactos) {
-            if (a.nombre.equals(nombre)) {
+            if (a.nombre.equals(n)) {
                 return a;
             }
         }
@@ -198,9 +198,9 @@ public class Wizard extends Persona implements IHacerMagia {
     }
 
     @Override
-    public String toString() {
-        return "El personaje " + this.nombre + " esta vivo? " + this.estaVivo + " tiene " + this.salud
-                + " puntos de salud, tiene equipados los artefactos " + artefactos + ", le quedan " + energiaMagica
-                + " puntos de Energia Magica, sabe los hechizos " + hechizos + ", es mago orcuro? " + magoOscuro + ".";
+    public String toStringFull() {
+        return "El personaje " + this.nombre + " esta vivo? " + this.estaVivo + ".\nTiene " + this.salud
+                + " puntos de salud.\nTiene equipados los artefactos " + artefactos + ".\nLe quedan " + energiaMagica
+                + " puntos de Energia Magica.\nSabe los hechizos " + hechizos + ".\nEs mago orcuro? " + magoOscuro + ".";
     }
 }
