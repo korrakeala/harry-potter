@@ -91,7 +91,7 @@ public class Wizard extends Persona implements IHacerMagia {
         double curacionTotal;
         IHacerMagia e;
 
-        if (this.estaVivo) {
+        if (this.estaVivo && enemigo.estaVivo) {
             
         if (this.energiaMagica >= hechizo.nivelEnergia) {
             for (int i = 0; i < artefactos.size(); i++) {
@@ -120,8 +120,6 @@ public class Wizard extends Persona implements IHacerMagia {
             curacionTotal = s + curacion;
 
             enemigo.salud = (int) (curacionTotal - danioTotal);
-
-            System.out.println(this.nombre + " invoca " + hechizo.nombre);
 
             if (enemigo.salud > 100) {
                 enemigo.salud = 100;
@@ -155,7 +153,7 @@ public class Wizard extends Persona implements IHacerMagia {
         double curacionTotal;
         IHacerMagia e;
 
-        if (this.estaVivo) {
+        if (this.estaVivo && enemigo.estaVivo) {
 
             if (this.energiaMagica >= h.nivelEnergia) {
                 for (int i = 0; i < artefactos.size(); i++) {
@@ -185,8 +183,6 @@ public class Wizard extends Persona implements IHacerMagia {
 
                 enemigo.salud = (int) (curacionTotal - danioTotal);
 
-                System.out.println(this.nombre + " invoca " + h.nombre);
-
                 if (enemigo.salud > 100) {
                     enemigo.salud = 100;
                 }
@@ -210,7 +206,7 @@ public class Wizard extends Persona implements IHacerMagia {
     public String toStringFull() {
         return "El personaje " + this.nombre + " esta vivo? " + this.estaVivo + ".\nTiene " + this.salud
                 + " puntos de salud.\nTiene equipados los artefactos " + artefactos + ".\nLe quedan " + energiaMagica
-                + " puntos de Energia Magica.\nSabe los hechizos " + hechizos + ".\nEs mago orcuro? " + magoOscuro
+                + " puntos de Energia Magica.\nSabe los hechizos " + hechizos + ".\nEs mago oscuro? " + magoOscuro
                 + ".";
     }
 
