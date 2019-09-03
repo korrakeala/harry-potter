@@ -31,10 +31,15 @@ public class App {
             if (p1 instanceof IHacerMagia) {
                 p = (IHacerMagia) p1;
                 System.out.println("Elegi con que hechizo atacar ingresando su nombre");
-                p.listarHechizos();                
+                p.listarHechizos();
                 String h1 = Teclado.nextLine();
                 p.atacar(p2, h1);
-                System.out.println(p1.nombre + " ataca a " + p2.nombre + " con el hechizo " + p.getHechizo(h1).nombre); //verificar que aparesca el nombre solo
+                System.out.println(p1.nombre + " ataca a " + p2.nombre + " con el hechizo " + p.getHechizo(h1).nombre); // verificar
+                                                                                                                        // que
+                                                                                                                        // aparesca
+                                                                                                                        // el
+                                                                                                                        // nombre
+                                                                                                                        // solo
                 p.atacar(p2, p.buscarHechizo(h1)); // aca el parametro de atacar() es objeto.
             } else {
                 System.out.println("El personaje " + p1.nombre + " no puede atacar porque no hace magia.");
@@ -124,11 +129,15 @@ public class App {
             Artefacto a = new Artefacto();
             while (!a1.equals("0")) {
                 a = JuegoHarryPotter.buscarArtefacto(a1);
-                if (m.getArtefacto(a.nombre) == null) {
-                    m.equipar(a);
-                    System.out.println("El artefacto " + a.nombre + " fue equipado.");
+                if (JuegoHarryPotter.buscarArtefacto(a1) != null) {
+                    if (m.getArtefacto(a.nombre) == null) {
+                        m.equipar(a);
+                        System.out.println("El artefacto " + a.nombre + " fue equipado.");
+                    } else {
+                        System.out.println("Ese artefacto ya fue equipado.");
+                    }
                 } else {
-                    System.out.println("Ese artefacto ya fue equipado.");
+                    System.out.println("Ese Artefacto no existe, elija otro.");
                 }
                 System.out.println("Elegi que artefactos equipar ingresando su Nombre. Para terminar, ingresa 0.");
                 JuegoHarryPotter.listarArtefactos();
