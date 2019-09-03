@@ -18,7 +18,7 @@ public class Personaje {
         this.nombre = nombre;
     }
 
-    public boolean isEstaVivo() {
+    public boolean estaVivo() {
         return estaVivo;
     }
 

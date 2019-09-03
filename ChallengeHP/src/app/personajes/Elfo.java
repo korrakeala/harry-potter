@@ -85,7 +85,7 @@ public class Elfo extends Criatura implements IHacerMagia {
     double curacionTotal;
     IHacerMagia e;
 
-    if (this.estaVivo) {
+    if (this.estaVivo && enemigo.estaVivo) {
       for (int i = 0; i < artefactos.size(); i++) {
         danioAdicional += (d * this.artefactos.get(i).amplificadorDanio);
       }
@@ -101,8 +101,6 @@ public class Elfo extends Criatura implements IHacerMagia {
       curacionTotal = s + curacion;
 
       enemigo.salud = (int) (curacionTotal - danioTotal);
-
-      System.out.println(this.nombre + " invoca " + hechizo.nombre);
 
       if (enemigo.salud > 100) {
         enemigo.salud = 100;
@@ -133,7 +131,7 @@ public class Elfo extends Criatura implements IHacerMagia {
     double curacionTotal;
     IHacerMagia e;
 
-    if (this.estaVivo) {
+    if (this.estaVivo && enemigo.estaVivo) {
       for (int i = 0; i < artefactos.size(); i++) {
         danioAdicional += (d * this.artefactos.get(i).amplificadorDanio);
       }
@@ -150,8 +148,6 @@ public class Elfo extends Criatura implements IHacerMagia {
       curacionTotal = s + curacion;
 
       enemigo.salud = (int) (curacionTotal - danioTotal);
-
-      System.out.println(this.nombre + " invoca " + h.nombre);
 
       if (enemigo.salud > 100) {
         enemigo.salud = 100;
