@@ -91,6 +91,8 @@ public class Wizard extends Persona implements IHacerMagia {
         double curacionTotal;
         IHacerMagia e;
 
+        if (this.estaVivo) {
+            
         if (this.energiaMagica >= hechizo.nivelEnergia) {
             for (int i = 0; i < artefactos.size(); i++) {
                 danioAdicional += (d * this.artefactos.get(i).amplificadorDanio);
@@ -136,6 +138,9 @@ public class Wizard extends Persona implements IHacerMagia {
         } else {
             System.out.println(this.nombre + " no tiene energia magica suficiente para realizar este hechizo");
         }
+    } else {
+            System.out.println(this.nombre + " no puede atacar porque esta muerto.");
+        }
     }
 
     @Override
@@ -150,49 +155,54 @@ public class Wizard extends Persona implements IHacerMagia {
         double curacionTotal;
         IHacerMagia e;
 
-        if (this.energiaMagica >= h.nivelEnergia) {
-            for (int i = 0; i < artefactos.size(); i++) {
-                danioAdicional += (d * this.artefactos.get(i).amplificadorDanio);
-            }
+        if (this.estaVivo) {
 
-            if (enemigo instanceof IHacerMagia) {
-                e = (IHacerMagia) enemigo;
-                for (int i = 0; i < e.getArtefactos().size(); i++) {
-                    curacion += (s * e.getArtefactos().get(i).amplificadorSalud);
+            if (this.energiaMagica >= h.nivelEnergia) {
+                for (int i = 0; i < artefactos.size(); i++) {
+                    danioAdicional += (d * this.artefactos.get(i).amplificadorDanio);
                 }
-            }
 
-            this.energiaMagica -= h.nivelEnergia;
+                if (enemigo instanceof IHacerMagia) {
+                    e = (IHacerMagia) enemigo;
+                    for (int i = 0; i < e.getArtefactos().size(); i++) {
+                        curacion += (s * e.getArtefactos().get(i).amplificadorSalud);
+                    }
+                }
 
-            danioTotal = d + danioAdicional;
+                this.energiaMagica -= h.nivelEnergia;
 
-            if (h.esOscuro) {
-                this.magoOscuro = true;
-            }
+                danioTotal = d + danioAdicional;
 
-            if (this.magoOscuro) {
-                danioTotal *= 2;
-            }
+                if (h.esOscuro) {
+                    this.magoOscuro = true;
+                }
 
-            curacionTotal = s + curacion;
+                if (this.magoOscuro) {
+                    danioTotal *= 2;
+                }
 
-            enemigo.salud = (int) (curacionTotal - danioTotal);
+                curacionTotal = s + curacion;
 
-            System.out.println(this.nombre + " invoca " + h.nombre);
+                enemigo.salud = (int) (curacionTotal - danioTotal);
 
-            if (enemigo.salud > 100) {
-                enemigo.salud = 100;
-            }
-            if (enemigo.salud < 1) {
-                enemigo.estaVivo = false;
-                System.out.println(enemigo.nombre + " esta MUERTOO!");
-                enemigo.salud = 0;
-            }
-            if (enemigo.estaVivo) {
-                System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
+                System.out.println(this.nombre + " invoca " + h.nombre);
+
+                if (enemigo.salud > 100) {
+                    enemigo.salud = 100;
+                }
+                if (enemigo.salud < 1) {
+                    enemigo.estaVivo = false;
+                    System.out.println(enemigo.nombre + " esta MUERTOO!");
+                    enemigo.salud = 0;
+                }
+                if (enemigo.estaVivo) {
+                    System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
+                }
+            } else {
+                System.out.println(this.nombre + " no tiene energia magica suficiente para realizar este hechizo");
             }
         } else {
-            System.out.println(this. nombre + " no tiene energia magica suficiente para realizar este hechizo");
+            System.out.println(this.nombre + " no puede atacar porque esta muerto.");
         }
     }
 
@@ -200,7 +210,8 @@ public class Wizard extends Persona implements IHacerMagia {
     public String toStringFull() {
         return "El personaje " + this.nombre + " esta vivo? " + this.estaVivo + ".\nTiene " + this.salud
                 + " puntos de salud.\nTiene equipados los artefactos " + artefactos + ".\nLe quedan " + energiaMagica
-                + " puntos de Energia Magica.\nSabe los hechizos " + hechizos + ".\nEs mago orcuro? " + magoOscuro + ".";
+                + " puntos de Energia Magica.\nSabe los hechizos " + hechizos + ".\nEs mago orcuro? " + magoOscuro
+                + ".";
     }
 
     @Override

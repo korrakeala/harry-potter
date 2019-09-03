@@ -85,35 +85,39 @@ public class Elfo extends Criatura implements IHacerMagia {
     double curacionTotal;
     IHacerMagia e;
 
-    for (int i = 0; i < artefactos.size(); i++) {
-      danioAdicional += (d * this.artefactos.get(i).amplificadorDanio);
-    }
-
-    if (enemigo instanceof IHacerMagia) {
-      e = (IHacerMagia) enemigo;
-      for (int i = 0; i < e.getArtefactos().size(); i++) {
-        curacion += (s * e.getArtefactos().get(i).amplificadorSalud);
+    if (this.estaVivo) {
+      for (int i = 0; i < artefactos.size(); i++) {
+        danioAdicional += (d * this.artefactos.get(i).amplificadorDanio);
       }
-    }
 
-    danioTotal = d + danioAdicional;
-    curacionTotal = s + curacion;
-
-    enemigo.salud = (int) (curacionTotal - danioTotal);
-
-    System.out.println(this.nombre + " invoca " + hechizo.nombre);
-
-    if (enemigo.salud > 100) {
-      enemigo.salud = 100;
-    }
-    if (enemigo.salud < 1) {
-      enemigo.estaVivo = false;
-      System.out.println(enemigo.nombre + " esta MUERTOO!");
-      enemigo.salud = 0;
-
-      if (enemigo.estaVivo) {
-        System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
+      if (enemigo instanceof IHacerMagia) {
+        e = (IHacerMagia) enemigo;
+        for (int i = 0; i < e.getArtefactos().size(); i++) {
+          curacion += (s * e.getArtefactos().get(i).amplificadorSalud);
+        }
       }
+
+      danioTotal = d + danioAdicional;
+      curacionTotal = s + curacion;
+
+      enemigo.salud = (int) (curacionTotal - danioTotal);
+
+      System.out.println(this.nombre + " invoca " + hechizo.nombre);
+
+      if (enemigo.salud > 100) {
+        enemigo.salud = 100;
+      }
+      if (enemigo.salud < 1) {
+        enemigo.estaVivo = false;
+        System.out.println(enemigo.nombre + " esta MUERTOO!");
+        enemigo.salud = 0;
+
+        if (enemigo.estaVivo) {
+          System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
+        }
+      }
+    } else {
+      System.out.println(this.nombre + " no puede atacar porque esta muerto.");
     }
   }
 
@@ -129,37 +133,40 @@ public class Elfo extends Criatura implements IHacerMagia {
     double curacionTotal;
     IHacerMagia e;
 
-    for (int i = 0; i < artefactos.size(); i++) {
-      danioAdicional += (d * this.artefactos.get(i).amplificadorDanio);
-    }
-
-    if (enemigo instanceof IHacerMagia) {
-      e = (IHacerMagia) enemigo;
-      for (int i = 0; i < e.getArtefactos().size(); i++) {
-        curacion += (s * e.getArtefactos().get(i).amplificadorSalud);
+    if (this.estaVivo) {
+      for (int i = 0; i < artefactos.size(); i++) {
+        danioAdicional += (d * this.artefactos.get(i).amplificadorDanio);
       }
+
+      if (enemigo instanceof IHacerMagia) {
+        e = (IHacerMagia) enemigo;
+        for (int i = 0; i < e.getArtefactos().size(); i++) {
+          curacion += (s * e.getArtefactos().get(i).amplificadorSalud);
+        }
+      }
+
+      danioTotal = d + danioAdicional;
+
+      curacionTotal = s + curacion;
+
+      enemigo.salud = (int) (curacionTotal - danioTotal);
+
+      System.out.println(this.nombre + " invoca " + h.nombre);
+
+      if (enemigo.salud > 100) {
+        enemigo.salud = 100;
+      }
+      if (enemigo.salud < 1) {
+        enemigo.estaVivo = false;
+        System.out.println(enemigo.nombre + " esta MUERTOO!");
+        enemigo.salud = 0;
+      }
+      if (enemigo.estaVivo) {
+        System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
+      }
+    } else {
+      System.out.println(this.nombre + " no puede atacar porque esta muerto.");
     }
-
-    danioTotal = d + danioAdicional;
-
-    curacionTotal = s + curacion;
-
-    enemigo.salud = (int) (curacionTotal - danioTotal);
-
-    System.out.println(this.nombre + " invoca " + h.nombre);
-
-    if (enemigo.salud > 100) {
-      enemigo.salud = 100;
-    }
-    if (enemigo.salud < 1) {
-      enemigo.estaVivo = false;
-      System.out.println(enemigo.nombre + " esta MUERTOO!");
-      enemigo.salud = 0;
-    }
-    if (enemigo.estaVivo) {
-      System.out.println(enemigo.nombre + " tiene " + enemigo.salud + " puntos de salud.");
-    }
-
   }
 
   @Override
