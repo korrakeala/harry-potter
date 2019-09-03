@@ -29,21 +29,11 @@ public class App {
         while (p1.isEstaVivo() && p2.isEstaVivo()) {
             if (p1 instanceof IHacerMagia) {
                 p = (IHacerMagia) p1;
-<<<<<<< HEAD
                 System.out.println("Elegi con que hechizo ataca " + p1.nombre + " ingresando su nombre");
-                p.listarHechizos();                
-=======
-                System.out.println("Elegi con que hechizo atacar ingresando su nombre");
                 p.listarHechizos();
->>>>>>> 25c1059f3f820016935ca2b1a5715b306d6032e5
                 String h1 = Teclado.nextLine();
                 p.atacar(p2, h1);
-                System.out.println(p1.nombre + " ataca a " + p2.nombre + " con el hechizo " + p.getHechizo(h1).nombre); // verificar
-                                                                                                                        // que
-                                                                                                                        // aparesca
-                                                                                                                        // el
-                                                                                                                        // nombre
-                                                                                                                        // solo
+                System.out.println(p1.nombre + " ataca a " + p2.nombre + " con el hechizo " + p.getHechizo(h1).nombre);
                 p.atacar(p2, p.buscarHechizo(h1)); // aca el parametro de atacar() es objeto.
             } else {
                 System.out.println("El personaje " + p1.nombre + " no puede atacar porque no hace magia.");
