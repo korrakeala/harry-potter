@@ -29,11 +29,7 @@ public class App {
         while (p1.isEstaVivo() && p2.isEstaVivo()) {
             if (p1 instanceof IHacerMagia) {
                 p = (IHacerMagia) p1;
-<<<<<<< HEAD
-                System.out.println(" Elegi con que hechizo atacar ingresando su nombre");
-=======
                 System.out.println("Elegi con que hechizo ataca " + p1.nombre + " ingresando su nombre");
->>>>>>> 23f9d6c3189aed9d522938b9b1cca02dc710a7ea
                 p.listarHechizos();
                 String h1 = Teclado.nextLine();
                 p.atacar(p2, h1);
