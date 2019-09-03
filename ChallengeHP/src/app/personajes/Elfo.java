@@ -166,8 +166,8 @@ public class Elfo extends Criatura implements IHacerMagia {
 
   @Override
   public String toStringFull() {
-    return "El personaje " + this.nombre + " esta vivo? " + this.estaVivo + ".\nTiene " + this.salud
-        + " puntos de salud.\nTiene equipados los artefactos " + artefactos + ".\nSabe los hechizos " + hechizos + ".";
+    return "\nEl personaje " + this.nombre + " esta vivo? " + this.estaVivo + ".\n\t-Tiene " + this.salud
+        + " puntos de salud.\n\t-Tiene equipados los artefactos " + artefactos + ".\n\t-Sabe los hechizos " + hechizos + ".";
   }
 
   @Override
