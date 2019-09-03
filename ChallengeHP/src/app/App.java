@@ -81,18 +81,22 @@ public class App {
         JuegoHarryPotter.listarPersonajes();
         String p2 = Teclado.nextLine();
         Personaje personaje2 = JuegoHarryPotter.buscarPersonaje(p2);
+        if (JuegoHarryPotter.buscarPersonaje(p2) != null) {
+            if (!personaje2.equals(personaje1)) {
 
-        if (!personaje2.equals(personaje1)) {
+                siHaceMagia(personaje2);
 
-            siHaceMagia(personaje2);
-
-            if (personaje2 == null) {
-                System.out.println("El personaje no existe. Por favor, intente de nuevo.");
+                if (personaje2 == null) {
+                    System.out.println("El personaje no existe. Por favor, intente de nuevo.");
+                    configurarPersonaje2(personaje1);
+                }
+                return personaje2;
+            } else {
+                System.out.println(personaje1.nombre + " ya fue seleccionado. Por favor, elija otro.");
                 configurarPersonaje2(personaje1);
             }
-            return personaje2;
         } else {
-            System.out.println(personaje1.nombre + " ya fue seleccionado. Por favor, elija otro.");
+            System.out.println("El personaje no existe. Por favor, intente de nuevo.");
             configurarPersonaje2(personaje1);
         }
         return null;
