@@ -23,4 +23,9 @@ public interface IHacerMagia {
     Artefacto getArtefacto(String nombre);
     void equipar(Artefacto a);
     String toStringFull();
+    void listarHechizos();
+    void listarArtefactos();
+    
+
+
 }

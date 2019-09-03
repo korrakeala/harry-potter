@@ -30,21 +30,24 @@ public class App {
         while (p1.isEstaVivo() && p2.isEstaVivo()) {
             if (p1 instanceof IHacerMagia) {
                 p = (IHacerMagia) p1;
-                // elegir con que hechizo de la lista de p atacar, y asignar a una variable del
-                // tipo que corresponda
-                System.out.println(p1.nombre + " ataca a " + p2.nombre + " con el hechizo (y poner la variable)");
-                p.atacar(p2, p.buscarHechizo("RictusSempra")); // aca el parametro de atacar() es objeto
+                System.out.println("Elegi con que hechizo atacar ingresando su nombre");
+                p.listarHechizos();                
+                String h1 = Teclado.nextLine();
+                p.atacar(p2, h1);
+                System.out.println(p1.nombre + " ataca a " + p2.nombre + " con el hechizo " + p.getHechizo(h1).nombre); //verificar que aparesca el nombre solo
+                p.atacar(p2, p.buscarHechizo(h1)); // aca el parametro de atacar() es objeto.
             } else {
-                System.out.println("El personaje no puede atacar porque no hace magia.");
+                System.out.println("El personaje " + p1.nombre + " no puede atacar porque no hace magia.");
             }
             if (p2 instanceof IHacerMagia) {
                 p = (IHacerMagia) p2;
-                // elegir con que hechizo de la lista de p atacar, y asignar a una variable del
-                // tipo que corresponda
-                System.out.println(p2.nombre + " ataca a " + p1.nombre + " con el hechizo (y poner la variable)");
-                p.atacar(p1, "Sectumsempra"); // aca el parametro de atacar() es string
+                System.out.println("Elegi con que hechizo atacar ingresando su nombre.");
+                p.listarHechizos();
+                String h2 = Teclado.nextLine();
+                System.out.println(p2.nombre + " ataca a " + p1.nombre + " con el hechizo " + p.getHechizo(h2).nombre);
+                p.atacar(p1, h2); // aca el parametro de atacar() es string
             } else {
-                System.out.println("El personaje no puede atacar porque no hace magia.");
+                System.out.println("El personaje " + p2.nombre + " no puede atacar porque no hace magia.");
             }
         }
 

@@ -203,4 +203,20 @@ public class Wizard extends Persona implements IHacerMagia {
                 + " puntos de salud.\nTiene equipados los artefactos " + artefactos + ".\nLe quedan " + energiaMagica
                 + " puntos de Energia Magica.\nSabe los hechizos " + hechizos + ".\nEs mago orcuro? " + magoOscuro + ".";
     }
+
+    @Override
+    public void listarHechizos() {
+        for (int i = 0; i < this.hechizos.size(); i++) {
+            System.out.println(this.hechizos.get(i));
+        }
+
+    }
+
+    @Override
+    public void listarArtefactos() {
+        for (int i = 0; i < this.artefactos.size(); i++) {
+            System.out.println(this.artefactos.get(i));
+        }
+
+    }
 }
