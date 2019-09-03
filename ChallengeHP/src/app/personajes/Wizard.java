@@ -204,9 +204,9 @@ public class Wizard extends Persona implements IHacerMagia {
 
     @Override
     public String toStringFull() {
-        return "\nEl personaje " + this.nombre + " esta vivo? " + this.estaVivo + ".\nTiene " + this.salud
-                + " puntos de salud.\nTiene equipados los artefactos " + artefactos + ".\nLe quedan " + energiaMagica
-                + " puntos de Energia Magica.\nSabe los hechizos " + hechizos + ".\nEs mago oscuro? " + magoOscuro
+        return "\nEl personaje " + this.nombre + " esta vivo? " + this.estaVivo + ".\n\t-Tiene " + this.salud
+                + " puntos de salud.\n\t-Tiene equipados los artefactos " + artefactos + ".\n\t-Le quedan " + energiaMagica
+                + " puntos de Energia Magica.\n\t-Sabe los hechizos " + hechizos + ".\n\t-Es mago oscuro? " + magoOscuro
                 + ".";
     }
 
