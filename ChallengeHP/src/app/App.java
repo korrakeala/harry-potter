@@ -96,10 +96,10 @@ public class App {
             System.out.println("Elegi que hechizos aprender ingresando su Nombre. Para terminar, ingresa 0.");
             JuegoHarryPotter.listarHechizos();
             String hechizo = Teclado.nextLine();
-            Hechizo h = new Hechizo(); // esto va?
+            Hechizo h = new Hechizo();
             while (!hechizo.equals("0")) {
                 h = JuegoHarryPotter.buscarHechizo(hechizo);
-                if (m.getHechizo(h.nombre) == null) { // por que vuelve a la primera posicion de la lista estatica?
+                if (m.getHechizo(h.nombre) == null) {
                     m.aprender(h);
                     System.out.println("El hechizo " + h.nombre + " fue aprendido.");
                 } else {
@@ -108,7 +108,7 @@ public class App {
                 System.out.println("Elegi que hechizos aprender ingresando su Nombre. Para terminar, ingresa 0.");
                 JuegoHarryPotter.listarHechizos();
                 hechizo = Teclado.nextLine();
-                h = new Hechizo(); // esto va?
+                h = new Hechizo();
             }
 
             System.out.println("Elegi que artefactos equipar ingresando su Nombre. Para terminar, ingresa 0.");
@@ -117,7 +117,7 @@ public class App {
             Artefacto a = new Artefacto();
             while (!a1.equals("0")) {
                 a = JuegoHarryPotter.buscarArtefacto(a1);
-                if (m.getArtefacto(a.nombre) == null) { // revisar que pasa con estas busquedas
+                if (m.getArtefacto(a.nombre) == null) {
                     m.equipar(a);
                     System.out.println("El artefacto " + a.nombre + " fue equipado.");
                 } else {

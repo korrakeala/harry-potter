@@ -3,7 +3,7 @@ package app.interfaces;
 /**
  * IEsMagico
  */
-public interface IEsMagico { //que onda con estos metodos?
+public interface IEsMagico {
 
 boolean esInvisibleAMuggles();
 boolean esInvisible();
